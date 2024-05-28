@@ -8,10 +8,10 @@ import java.util.logging.Logger;
 public class List {
 
     private static final Logger LOGGER = Logger.getLogger(List.class.getName());
-    
+
     public void list(NumbersService numbersService) {
 
-        var service = numbersService.available();
+        var availableNumbersService = numbersService.available();
 
         var regionCode = "US";
         var type = NumberType.LOCAL;
@@ -22,8 +22,11 @@ public class List {
                         .setType(type)
                         .build();
 
-        var response = service.list(parameters);
+        var response = availableNumbersService.list(parameters);
 
-        response.iterator().forEachRemaining(f -> LOGGER.info(f.toString()));
+        response.iterator()
+                .forEachRemaining(
+                        number ->
+                                LOGGER.info(String.format("Available number details: %s", number)));
     }
 }
