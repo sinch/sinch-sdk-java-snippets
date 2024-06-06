@@ -16,14 +16,14 @@ public class Snippet {
         BatchesService batchesService = smsService.batches();
 
         String from = "YOUR_sinch_phone_number";
-        Collection<String> recipients = Collections.singletonList("YOUR_recipient_phone_number");
+        String recipient = "YOUR_recipient_phone_number";
         String body = "This is a test SMS message using the Sinch Java SDK.";
 
         LOGGER.info("Sending SMS Text");
         BatchText value =
                 batchesService.send(
                         SendSmsBatchTextRequest.builder()
-                                .setTo(recipients)
+                                .setTo(Collections.singletonList(recipient))
                                 .setBody(body)
                                 .setFrom(from)
                                 .build());
