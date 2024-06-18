@@ -8,26 +8,26 @@ import java.util.logging.Logger;
 
 public class Snippet {
 
-    private static final Logger LOGGER = Logger.getLogger(Snippet.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(Snippet.class.getName());
 
-    static void execute(NumbersService numbersService) {
+  static void execute(NumbersService numbersService) {
 
-        AvailableNumberService availableNumbersService = numbersService.available();
+    AvailableNumberService availableNumbersService = numbersService.available();
 
-        String regionCode = "US";
-        NumberType type = NumberType.LOCAL;
+    String regionCode = "US";
+    NumberType type = NumberType.LOCAL;
 
-        AvailableNumberListAllRequestParameters parameters =
-                AvailableNumberListAllRequestParameters.builder()
-                        .setRegionCode(regionCode)
-                        .setType(type)
-                        .build();
+    AvailableNumberListAllRequestParameters parameters =
+        AvailableNumberListAllRequestParameters.builder()
+            .setRegionCode(regionCode)
+            .setType(type)
+            .build();
 
-        AvailableNumberListResponse response = availableNumbersService.list(parameters);
+    AvailableNumberListResponse response = availableNumbersService.list(parameters);
 
-        response.iterator()
-                .forEachRemaining(
-                        number ->
-                                LOGGER.info(String.format("Available number details: %s", number)));
-    }
+    response
+        .iterator()
+        .forEachRemaining(
+            number -> LOGGER.info(String.format("Available number details: %s", number)));
+  }
 }
