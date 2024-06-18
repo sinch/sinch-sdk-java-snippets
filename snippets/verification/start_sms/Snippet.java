@@ -8,24 +8,24 @@ import java.util.logging.Logger;
 
 public class Snippet {
 
-    private static final Logger LOGGER = Logger.getLogger(Snippet.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(Snippet.class.getName());
 
-    static void execute(VerificationService verificationService) {
+  static void execute(VerificationService verificationService) {
 
-        // REMINDER: verification Service require to have set application key/secret
-        // onto Sinch Client init
-        VerificationsService verificationsService = verificationService.verifications();
+    // REMINDER: verification Service require to have set application key/secret
+    // onto Sinch Client init
+    VerificationsService verificationsService = verificationService.verifications();
 
-        String phoneNumber = "YOUR_phone_number";
+    String phoneNumber = "YOUR_phone_number";
 
-        LOGGER.info(String.format("Sending a SMS verification to '%s'", phoneNumber));
+    LOGGER.info(String.format("Sending a SMS verification to '%s'", phoneNumber));
 
-        StartVerificationResponseSMS response =
-                verificationsService.startSms(
-                        StartVerificationSMSRequestParameters.builder()
-                                .setIdentity(NumberIdentity.valueOf(phoneNumber))
-                                .build());
+    StartVerificationResponseSMS response =
+        verificationsService.startSms(
+            StartVerificationSMSRequestParameters.builder()
+                .setIdentity(NumberIdentity.valueOf(phoneNumber))
+                .build());
 
-        LOGGER.info("Response: " + response);
-    }
+    LOGGER.info("Response: " + response);
+  }
 }
