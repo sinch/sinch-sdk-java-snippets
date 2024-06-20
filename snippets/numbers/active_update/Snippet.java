@@ -15,7 +15,7 @@ public class Snippet {
 
     ActiveNumberService activeNumbersService = numbersService.active();
 
-    String phoneNumber = "YOUR_phone_number_to_be_rented";
+    String phoneNumber = "YOUR_phone_number_to_be_updated";
     String appId = "YOUR_app_id";
     String displayName = "Updated from Sinch Java SDK";
 
