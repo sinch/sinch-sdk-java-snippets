@@ -1,4 +1,5 @@
 #!/bin/sh
 
-(cd snippets && mvn clean spotless:apply compile)
+(cd snippets && mvn clean spotless:apply)
+(cd snippets && ./compile.sh)
 
