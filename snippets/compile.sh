@@ -6,9 +6,5 @@ echo "Compiling snippets:"
 for snippet in $SNIPPETS
 do
  echo " - Snippet: $snippet"
-  mvn compile -Dsnippet="$(dirname $snippet)"
-  if [ $? -ne 0 ]
-  then
-    exit $?
-  fi
+  mvn compile -Dsnippet="$(dirname $snippet)" || exit 1
 done
