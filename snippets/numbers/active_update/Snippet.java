@@ -1,10 +1,11 @@
 package numbers;
 
-import com.sinch.sdk.domains.numbers.ActiveNumberService;
-import com.sinch.sdk.domains.numbers.NumbersService;
-import com.sinch.sdk.domains.numbers.models.ActiveNumber;
-import com.sinch.sdk.domains.numbers.models.requests.ActiveNumberUpdateRequestParameters;
-import com.sinch.sdk.domains.numbers.models.requests.ActiveNumberUpdateVoiceConfigurationRequestParameters;
+import com.sinch.sdk.domains.numbers.api.v1.ActiveNumberService;
+import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
+import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
+import com.sinch.sdk.domains.numbers.models.v1.VoiceConfiguration;
+import com.sinch.sdk.domains.numbers.models.v1.VoiceConfigurationRTC;
+import com.sinch.sdk.domains.numbers.models.v1.active.request.ActiveNumberUpdateRequest;
 import java.util.logging.Logger;
 
 public class Snippet {
@@ -19,11 +20,10 @@ public class Snippet {
     String appId = "YOUR_app_id";
     String displayName = "Updated from Sinch Java SDK";
 
-    ActiveNumberUpdateVoiceConfigurationRequestParameters voiceConfiguration =
-        ActiveNumberUpdateVoiceConfigurationRequestParameters.builder().setAppId(appId).build();
+    VoiceConfiguration voiceConfiguration = VoiceConfigurationRTC.builder().setAppId(appId).build();
 
-    ActiveNumberUpdateRequestParameters updateRequest =
-        ActiveNumberUpdateRequestParameters.builder()
+    ActiveNumberUpdateRequest updateRequest =
+        ActiveNumberUpdateRequest.builder()
             .setDisplayName(displayName)
             .setVoiceConfiguration(voiceConfiguration)
             .build();

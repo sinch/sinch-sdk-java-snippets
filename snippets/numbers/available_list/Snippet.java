@@ -1,9 +1,10 @@
 package numbers;
 
-import com.sinch.sdk.domains.numbers.*;
-import com.sinch.sdk.domains.numbers.models.*;
-import com.sinch.sdk.domains.numbers.models.requests.*;
-import com.sinch.sdk.domains.numbers.models.responses.AvailableNumberListResponse;
+import com.sinch.sdk.domains.numbers.api.v1.AvailableNumberService;
+import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
+import com.sinch.sdk.domains.numbers.models.v1.NumberType;
+import com.sinch.sdk.domains.numbers.models.v1.available.request.AvailableNumberListRequest;
+import com.sinch.sdk.domains.numbers.models.v1.available.response.AvailableNumberListResponse;
 import java.util.logging.Logger;
 
 public class Snippet {
@@ -17,8 +18,8 @@ public class Snippet {
     String regionCode = "US";
     NumberType type = NumberType.LOCAL;
 
-    AvailableNumberListAllRequestParameters parameters =
-        AvailableNumberListAllRequestParameters.builder()
+    AvailableNumberListRequest parameters =
+        AvailableNumberListRequest.builder()
             .setRegionCode(regionCode)
             .setType(type)
             .build();

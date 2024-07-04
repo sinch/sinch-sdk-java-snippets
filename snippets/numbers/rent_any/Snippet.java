@@ -1,12 +1,12 @@
 package numbers;
 
-import com.sinch.sdk.domains.numbers.AvailableNumberService;
-import com.sinch.sdk.domains.numbers.NumbersService;
-import com.sinch.sdk.domains.numbers.models.ActiveNumber;
-import com.sinch.sdk.domains.numbers.models.Capability;
-import com.sinch.sdk.domains.numbers.models.NumberType;
-import com.sinch.sdk.domains.numbers.models.requests.AvailableNumberRentAnyRequestParameters;
-import com.sinch.sdk.domains.numbers.models.requests.RentSMSConfigurationRequestParameters;
+import com.sinch.sdk.domains.numbers.api.v1.AvailableNumberService;
+import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
+import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
+import com.sinch.sdk.domains.numbers.models.v1.Capability;
+import com.sinch.sdk.domains.numbers.models.v1.NumberType;
+import com.sinch.sdk.domains.numbers.models.v1.SmsConfiguration;
+import com.sinch.sdk.domains.numbers.models.v1.available.request.AvailableNumberRentAnyRequest;
 import java.util.Collections;
 import java.util.logging.Logger;
 
@@ -26,12 +26,12 @@ public class Snippet {
 
     ActiveNumber response =
         availableNumbersService.rentAny(
-            AvailableNumberRentAnyRequestParameters.builder()
+            AvailableNumberRentAnyRequest.builder()
                 .setCapabilities(Collections.singletonList(capability))
                 .setType(numberType)
                 .setRegionCode(regionCode)
                 .setSmsConfiguration(
-                    RentSMSConfigurationRequestParameters.builder()
+                    SmsConfiguration.builder()
                         .setServicePlanId(servicePlanId)
                         .build())
                 .build());

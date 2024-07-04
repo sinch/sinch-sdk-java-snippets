@@ -1,10 +1,10 @@
 package numbers;
 
-import com.sinch.sdk.domains.numbers.AvailableNumberService;
-import com.sinch.sdk.domains.numbers.NumbersService;
-import com.sinch.sdk.domains.numbers.models.ActiveNumber;
-import com.sinch.sdk.domains.numbers.models.requests.AvailableNumberRentRequestParameters;
-import com.sinch.sdk.domains.numbers.models.requests.RentSMSConfigurationRequestParameters;
+import com.sinch.sdk.domains.numbers.api.v1.AvailableNumberService;
+import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
+import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
+import com.sinch.sdk.domains.numbers.models.v1.SmsConfiguration;
+import com.sinch.sdk.domains.numbers.models.v1.available.request.AvailableNumberRentRequest;
 import java.util.logging.Logger;
 
 public class Snippet {
@@ -20,11 +20,11 @@ public class Snippet {
     String phoneNumber = "available_phone_number_to_be_rented";
     String servicePlanId = "YOUR_service_plan_id";
 
-    RentSMSConfigurationRequestParameters smsConfiguration =
-        RentSMSConfigurationRequestParameters.builder().setServicePlanId(servicePlanId).build();
+    SmsConfiguration smsConfiguration =
+        SmsConfiguration.builder().setServicePlanId(servicePlanId).build();
 
-    AvailableNumberRentRequestParameters rentRequest =
-        AvailableNumberRentRequestParameters.builder()
+    AvailableNumberRentRequest rentRequest =
+        AvailableNumberRentRequest.builder()
             .setSmsConfiguration(smsConfiguration)
             .build();
 
