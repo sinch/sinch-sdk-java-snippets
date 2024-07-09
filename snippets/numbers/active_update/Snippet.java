@@ -1,6 +1,5 @@
 package numbers;
 
-import com.sinch.sdk.domains.numbers.api.v1.ActiveNumberService;
 import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
 import com.sinch.sdk.domains.numbers.models.v1.VoiceConfiguration;
@@ -14,8 +13,6 @@ public class Snippet {
 
   static void execute(NumbersService numbersService) {
 
-    ActiveNumberService activeNumbersService = numbersService.active();
-
     String phoneNumber = "YOUR_phone_number_to_be_updated";
     String appId = "YOUR_app_id";
     String displayName = "Updated from Sinch Java SDK";
@@ -28,7 +25,7 @@ public class Snippet {
             .setVoiceConfiguration(voiceConfiguration)
             .build();
 
-    ActiveNumber response = activeNumbersService.update(phoneNumber, updateRequest);
+    ActiveNumber response = numbersService.update(phoneNumber, updateRequest);
 
     LOGGER.info(String.format("Updated number: %s", response));
   }

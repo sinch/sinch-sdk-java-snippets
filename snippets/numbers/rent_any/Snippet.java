@@ -1,6 +1,5 @@
 package numbers;
 
-import com.sinch.sdk.domains.numbers.api.v1.AvailableNumberService;
 import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
 import com.sinch.sdk.domains.numbers.models.v1.Capability;
@@ -16,8 +15,6 @@ public class Snippet {
 
   static void execute(NumbersService numbersService) {
 
-    AvailableNumberService availableNumbersService = numbersService.available();
-
     String servicePlanId = "YOUR_service_plan_id";
     String regionCode = "YOUR_region_code";
 
@@ -25,15 +22,13 @@ public class Snippet {
     NumberType numberType = NumberType.LOCAL;
 
     ActiveNumber response =
-        availableNumbersService.rentAny(
+        numbersService.rentAny(
             AvailableNumberRentAnyRequest.builder()
                 .setCapabilities(Collections.singletonList(capability))
                 .setType(numberType)
                 .setRegionCode(regionCode)
                 .setSmsConfiguration(
-                    SmsConfiguration.builder()
-                        .setServicePlanId(servicePlanId)
-                        .build())
+                    SmsConfiguration.builder().setServicePlanId(servicePlanId).build())
                 .build());
 
     LOGGER.info(String.format("Rented number: %s", response));
