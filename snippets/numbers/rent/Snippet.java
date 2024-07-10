@@ -3,7 +3,7 @@ package numbers;
 import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
 import com.sinch.sdk.domains.numbers.models.v1.SmsConfiguration;
-import com.sinch.sdk.domains.numbers.models.v1.available.request.AvailableNumberRentRequest;
+import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumberRentRequest;
 import java.util.logging.Logger;
 
 public class Snippet {

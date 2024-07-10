@@ -5,7 +5,7 @@ import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
 import com.sinch.sdk.domains.numbers.models.v1.Capability;
 import com.sinch.sdk.domains.numbers.models.v1.NumberType;
 import com.sinch.sdk.domains.numbers.models.v1.SmsConfiguration;
-import com.sinch.sdk.domains.numbers.models.v1.available.request.AvailableNumberRentAnyRequest;
+import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumberRentAnyRequest;
 import java.util.Collections;
 import java.util.logging.Logger;
 
