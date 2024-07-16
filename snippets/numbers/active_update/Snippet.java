@@ -1,11 +1,10 @@
 package numbers;
 
-import com.sinch.sdk.domains.numbers.api.v1.ActiveNumberService;
 import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
 import com.sinch.sdk.domains.numbers.models.v1.VoiceConfiguration;
 import com.sinch.sdk.domains.numbers.models.v1.VoiceConfigurationRTC;
-import com.sinch.sdk.domains.numbers.models.v1.active.request.ActiveNumberUpdateRequest;
+import com.sinch.sdk.domains.numbers.models.v1.request.ActiveNumberUpdateRequest;
 import java.util.logging.Logger;
 
 public class Snippet {
@@ -13,8 +12,6 @@ public class Snippet {
   private static final Logger LOGGER = Logger.getLogger(Snippet.class.getName());
 
   static void execute(NumbersService numbersService) {
-
-    ActiveNumberService activeNumbersService = numbersService.active();
 
     String phoneNumber = "YOUR_phone_number_to_be_updated";
     String appId = "YOUR_app_id";
@@ -28,7 +25,7 @@ public class Snippet {
             .setVoiceConfiguration(voiceConfiguration)
             .build();
 
-    ActiveNumber response = activeNumbersService.update(phoneNumber, updateRequest);
+    ActiveNumber response = numbersService.update(phoneNumber, updateRequest);
 
     LOGGER.info(String.format("Updated number: %s", response));
   }
