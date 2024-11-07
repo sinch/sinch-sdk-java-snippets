@@ -1,8 +1,9 @@
 package voice;
 
-import com.sinch.sdk.domains.voice.*;
-import com.sinch.sdk.domains.voice.models.*;
-import com.sinch.sdk.domains.voice.models.requests.*;
+import com.sinch.sdk.domains.voice.api.v1.CalloutsService;
+import com.sinch.sdk.domains.voice.api.v1.VoiceService;
+import com.sinch.sdk.domains.voice.models.v1.callouts.request.CalloutRequestTTS;
+import com.sinch.sdk.domains.voice.models.v1.destination.DestinationPstn;
 
 public class Snippet {
 
@@ -13,9 +14,9 @@ public class Snippet {
     String phoneNumber = "YOUR_phone_number";
     String message = "Hello, this is a call from Sinch. Congratulations! You made your first call.";
 
-    CalloutRequestParametersTTS parameters =
-        CalloutRequestParametersTTS.builder()
-            .setDestination(DestinationNumber.valueOf(phoneNumber))
+    CalloutRequestTTS parameters =
+        CalloutRequestTTS.builder()
+            .setDestination(DestinationPstn.from(phoneNumber))
             .setText(message)
             .build();
 
