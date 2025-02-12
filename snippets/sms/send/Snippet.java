@@ -1,8 +1,9 @@
 package sms;
 
-import com.sinch.sdk.domains.sms.*;
-import com.sinch.sdk.domains.sms.models.*;
-import com.sinch.sdk.domains.sms.models.requests.*;
+import com.sinch.sdk.domains.sms.api.v1.BatchesService;
+import com.sinch.sdk.domains.sms.api.v1.SMSService;
+import com.sinch.sdk.domains.sms.models.v1.batches.request.TextRequest;
+import com.sinch.sdk.domains.sms.models.v1.batches.response.BatchResponse;
 import java.util.Collections;
 import java.util.logging.Logger;
 
@@ -19,9 +20,9 @@ public class Snippet {
     String body = "This is a test SMS message using the Sinch Java SDK.";
 
     LOGGER.info("Sending SMS Text");
-    BatchText value =
+    BatchResponse value =
         batchesService.send(
-            SendSmsBatchTextRequest.builder()
+            TextRequest.builder()
                 .setTo(Collections.singletonList(recipient))
                 .setBody(body)
                 .setFrom(from)
