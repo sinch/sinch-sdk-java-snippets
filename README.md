@@ -46,6 +46,11 @@ launcher regions/List
   - [numbers/Update](snippets/src/main/java/numbers/Update.java)
   - [numbers/Get](snippets/src/main/java/numbers/Get.java)
   - [numbers/Release](snippets/src/main/java/numbers/Release.java)
+  - Emergency Addresses
+    - [numbers/ValidateEmergencyAddress](snippets/src/main/java/numbers/ValidateEmergencyAddress.java)
+    - [numbers/ProvisionEmergencyAddress](snippets/src/main/java/numbers/ProvisionEmergencyAddress.java)
+    - [numbers/GetEmergencyAddress](snippets/src/main/java/numbers/GetEmergencyAddress.java)
+    - [numbers/DeprovisionEmergencyAddress](snippets/src/main/java/numbers/DeprovisionEmergencyAddress.java)
   - Regions
     - [numbers/regions/List](snippets/src/main/java/numbers/regions/List.java) 
   - Callbacks
