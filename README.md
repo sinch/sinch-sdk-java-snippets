@@ -2,3 +2,53 @@
 Sinch Java SDK Code Snippets Repository 
 
 This repository contains code snippets related to [Sinch JAVA SDK](https://github.com/sinch/sinch-sdk-java)
+
+Snippets can be used as starting point to support Sinch products from your own application.
+
+## Requirements
+- JDK 8 or later
+- [Sinch account](https://dashboard.sinch.com)
+
+## Snippet execution
+Launcher helpers are provided to execute snippets and minimize time to setup your first Java application based onto Sinch SDK
+
+### Linux platform
+Launch script is [here](./snippets/launcher)
+
+Execution:
+```shell
+cd snippets
+launcher <SNIPPET_SOURCE_PATH>
+```
+Where `SNIPPET_SOURCE_PATH` is .... path to snippet sources
+e.g.: 
+```shell
+launcher numbers/SearchForAvailableNumbers
+...
+launcher regions/List
+
+```
+
+## Available Snippets
+
+- Numbers
+  - [numbers/Rent](snippets/src/main/java/numbers/Rent.java)
+  - [numbers/RentAny](snippets/src/main/java/numbers/RentAny.java) 
+  - [numbers/SearchForAvailableNumbers](snippets/src/main/java/numbers/SearchForAvailableNumbers.java)
+  - [numbers/CheckAvailability](snippets/src/main/java/numbers/CheckAvailability.java)
+  - [numbers/List](snippets/src/main/java/numbers/List.java)
+  - [numbers/Update](snippets/src/main/java/numbers/Update.java)
+  - [numbers/Get](snippets/src/main/java/numbers/Get.java)
+  - [numbers/Release](snippets/src/main/java/numbers/Release.java)
+  - Regions
+    - [numbers/regions/List](snippets/src/main/java/numbers/regions/List.java) 
+  - Callbacks
+     - [numbers/callback/Get](snippets/src/main/java/numbers/callback/Get.java)
+     - [numbers/callback/Update](snippets/src/main/java/numbers/callback/Update.java)
+
+
+
+
+
+
+
