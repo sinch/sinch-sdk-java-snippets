@@ -20,7 +20,8 @@ Execution:
 cd snippets
 launcher <SNIPPET_SOURCE_PATH>
 ```
-Where `SNIPPET_SOURCE_PATH` is .... path to snippet sources
+Where `SNIPPET_SOURCE_PATH` is path to snippet source (see [Available Snippets](#available-snippets) for available snippets)
+
 e.g.: 
 ```shell
 launcher numbers/SearchForAvailableNumbers
