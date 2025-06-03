@@ -7,6 +7,7 @@ import com.sinch.sdk.domains.numbers.models.v1.SmsConfiguration;
 import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumberRentRequest;
 import com.sinch.sdk.models.Configuration;
 import java.util.logging.Logger;
+import utils.Settings;
 
 public class Rent {
 
@@ -14,14 +15,16 @@ public class Rent {
 
   public static void main(String[] args) {
 
-    String projectId = "SINCH_PROJECT_ID";
-    String keyId = "SINCH_KEY_ID";
-    String keySecret = "SINCH_KEY_SECRET";
+    String projectId = Settings.getProjectId().orElse("my_project_id");
+    String keyId = Settings.getKeyId().orElse("my_key_id");
+    String keySecret = Settings.getKeySecret().orElse("my_key_secret");
 
-    // Available numbers list can be retrieved by using list() function from available service, see:
-    // https://developers.sinch.com/docs/numbers/getting-started/java-sdk/searchavailable/
+    String servicePlanId = Settings.getServicePlanId().orElse("my_service_plan_id");
+
+    // Available numbers list can be retrieved by using list() function from available service, see
+    // the SearchAvailableSnippet or
+    // https://developers.sinch.com/docs/numbers/getting-started/java-sdk/searchavailable
     String phoneNumber = "available_phone_number_to_be_rented";
-    String servicePlanId = "YOUR_service_plan_id";
 
     Configuration configuration =
         Configuration.builder()

@@ -5,6 +5,7 @@ import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
 import com.sinch.sdk.models.Configuration;
 import java.util.logging.Logger;
+import utils.Settings;
 
 public class Release {
 
@@ -12,11 +13,11 @@ public class Release {
 
   public static void main(String[] args) {
 
-    String projectId = "SINCH_PROJECT_ID";
-    String keyId = "SINCH_KEY_ID";
-    String keySecret = "SINCH_KEY_SECRET";
+    String projectId = Settings.getProjectId().orElse("my_project_id");
+    String keyId = Settings.getKeyId().orElse("my_key_id");
+    String keySecret = Settings.getKeySecret().orElse("my_key_secret");
 
-    String phoneNumber = "YOUR_phone_number";
+    String phoneNumber = Settings.getPhoneNumber().orElse("my_phone_number");
 
     Configuration configuration =
         Configuration.builder()
