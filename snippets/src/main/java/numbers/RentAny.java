@@ -5,7 +5,6 @@ import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
 import com.sinch.sdk.domains.numbers.models.v1.Capability;
 import com.sinch.sdk.domains.numbers.models.v1.NumberType;
-import com.sinch.sdk.domains.numbers.models.v1.SmsConfiguration;
 import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumberRentAnyRequest;
 import com.sinch.sdk.models.Configuration;
 import java.util.Collections;
@@ -22,8 +21,9 @@ public class RentAny {
     String keyId = Settings.getKeyId().orElse("my_key_id");
     String keySecret = Settings.getKeySecret().orElse("my_key_secret");
 
-    String servicePlanId = Settings.getServicePlanId().orElse("my_service_plan_id");
-
+    // Available regions can be retrieved by using list() function from regions service, see
+    // the numbers/regions/List snippet or
+    // https://developers.sinch.com/docs/numbers/api-reference/numbers/tag/Available-Regions/
     String regionCode = "my_region_code";
 
     Configuration configuration =
@@ -46,8 +46,6 @@ public class RentAny {
                 .setCapabilities(Collections.singletonList(capability))
                 .setType(numberType)
                 .setRegionCode(regionCode)
-                .setSmsConfiguration(
-                    SmsConfiguration.builder().setServicePlanId(servicePlanId).build())
                 .build());
 
     LOGGER.info(String.format("Rented number: %s", response));

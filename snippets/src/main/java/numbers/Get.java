@@ -17,7 +17,7 @@ public class Get {
     String keyId = Settings.getKeyId().orElse("my_key_id");
     String keySecret = Settings.getKeySecret().orElse("my_key_secret");
 
-    String phoneNumber = Settings.getPhoneNumber().orElse("my_phone_number");
+    String phoneNumber = Settings.getPhoneNumber().orElse("my_sinch_phone_number");
 
     Configuration configuration =
         Configuration.builder()

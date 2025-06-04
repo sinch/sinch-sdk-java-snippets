@@ -12,8 +12,7 @@ public class Settings {
     properties = new Properties();
     try {
       // load a properties file from class path, inside static method
-      properties.load(
-          Settings.class.getClassLoader().getResourceAsStream("config.properties"));
+      properties.load(Settings.class.getClassLoader().getResourceAsStream("config.properties"));
     } catch (Exception ioe) {
       // ignore exception: properties file is just an helper
     }

@@ -18,9 +18,9 @@ public class Update {
     String keyId = Settings.getKeyId().orElse("my_key_id");
     String keySecret = Settings.getKeySecret().orElse("my_key_secret");
 
-    String phoneNumber = Settings.getPhoneNumber().orElse("my_phone_number");
+    String phoneNumber = Settings.getPhoneNumber().orElse("my_sinch_phone_number");
 
-    String displayName = "Updated from Sinch Java SDK";
+    String displayName = "Updated with Sinch Java SDK";
 
     Configuration configuration =
         Configuration.builder()

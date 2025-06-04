@@ -13,7 +13,7 @@ Snippets can be used as starting point to support Sinch products from your own a
 Launcher helpers are provided to execute snippets and minimize time to setup your first Java application based onto Sinch SDK
 
 ### Snippets execution settings
-When executing a snippet you will need to provide certain information about your Sinch account (credentials, phone number, ....)
+When executing a snippet you will need to provide certain information about your Sinch account (credentials, Sinch virtual phone number, ...)
 
 This settings can be placed directly in the snippet source or you can choose to edit the [configuration file](./snippets/src/main/resources/config.properties), in which case the settings will be shared and used automatically by each snippet.
 
