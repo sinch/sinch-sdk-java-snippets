@@ -9,5 +9,12 @@ echo "Running \"${SNIPPET}\" snippet"
 # supress '.java' suffix if any
 CLSS=$(echo "${SNIPPET}" | sed 's/\//./g;s/\.java$//g')
 
-./mvnw -q clean package exec:java -Djava.util.logging.config.file=src/main/resources/logging.properties -Dexec.mainClass="$CLSS" || exit 1
+./mvnw \
+  -q \
+  clean \
+  package \
+  exec:java \
+  -Djava.util.logging.config.file=src/main/resources/logging.properties \
+  -Dexec.mainClass="$CLSS" \
+   || exit 1
 

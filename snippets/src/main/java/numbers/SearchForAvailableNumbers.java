@@ -7,6 +7,7 @@ import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumberListReques
 import com.sinch.sdk.domains.numbers.models.v1.response.AvailableNumberListResponse;
 import com.sinch.sdk.models.Configuration;
 import java.util.logging.Logger;
+import utils.Settings;
 
 public class SearchForAvailableNumbers {
 
@@ -14,9 +15,9 @@ public class SearchForAvailableNumbers {
 
   public static void main(String[] args) {
 
-    String projectId = "SINCH_PROJECT_ID";
-    String keyId = "SINCH_KEY_ID";
-    String keySecret = "SINCH_KEY_SECRET";
+    String projectId = Settings.getProjectId().orElse("my_project_id");
+    String keyId = Settings.getKeyId().orElse("my_key_id");
+    String keySecret = Settings.getKeySecret().orElse("my_key_secret");
 
     Configuration configuration =
         Configuration.builder()
