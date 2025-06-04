@@ -1,23 +1,38 @@
-package conversation;
+package conversation.messages;
 
-import com.sinch.sdk.domains.conversation.api.v1.ConversationService;
+import com.sinch.sdk.SinchClient;
 import com.sinch.sdk.domains.conversation.api.v1.MessagesService;
 import com.sinch.sdk.domains.conversation.models.v1.*;
 import com.sinch.sdk.domains.conversation.models.v1.messages.*;
 import com.sinch.sdk.domains.conversation.models.v1.messages.request.*;
 import com.sinch.sdk.domains.conversation.models.v1.messages.response.SendMessageResponse;
 import com.sinch.sdk.domains.conversation.models.v1.messages.types.text.*;
+import com.sinch.sdk.models.Configuration;
 import java.util.*;
 import java.util.Collections;
+import java.util.logging.*;
 import java.util.logging.Logger;
 
-public class Snippet {
+public class SendSMS {
 
-  private static final Logger LOGGER = Logger.getLogger(Snippet.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(SendSMS.class.getName());
 
-  static void execute(ConversationService conversationService) {
+  public static void main(String[] args) {
 
-    MessagesService messagesService = conversationService.messages();
+    String projectId = "SINCH_PROJECT_ID";
+    String keyId = "SINCH_KEY_ID";
+    String keySecret = "SINCH_KEY_SECRET";
+
+    Configuration configuration =
+        Configuration.builder()
+            .setProjectId(projectId)
+            .setKeyId(keyId)
+            .setKeySecret(keySecret)
+            .build();
+
+    SinchClient client = new SinchClient(configuration);
+
+    MessagesService service = client.conversation().v1().messages();
 
     String appId = "YOUR_app_id";
     String from = "YOUR_sms_sender";
@@ -48,7 +63,7 @@ public class Snippet {
 
     LOGGER.info("Sending SMS Text using Conversation API");
 
-    SendMessageResponse value = messagesService.sendMessage(request);
+    SendMessageResponse value = service.sendMessage(request);
 
     LOGGER.info("Response: " + value);
   }
