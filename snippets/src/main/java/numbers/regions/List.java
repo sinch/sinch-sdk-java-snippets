@@ -8,12 +8,9 @@
 package numbers.regions;
 
 import com.sinch.sdk.SinchClient;
-import com.sinch.sdk.domains.numbers.api.v1.AvailableRegionService;
-import com.sinch.sdk.domains.numbers.models.v1.NumberType;
-import com.sinch.sdk.domains.numbers.models.v1.regions.available.request.AvailableRegionListRequest;
+import com.sinch.sdk.domains.numbers.api.v1.AvailableRegionsService;
 import com.sinch.sdk.domains.numbers.models.v1.regions.available.response.AvailableRegionListResponse;
 import com.sinch.sdk.models.Configuration;
-import java.util.Arrays;
 import java.util.logging.Logger;
 import utils.Settings;
 
@@ -36,15 +33,11 @@ public class List {
 
     SinchClient client = new SinchClient(configuration);
 
-    AvailableRegionService service = client.numbers().v1().regions();
+    AvailableRegionsService service = client.numbers().v1().regions();
 
     LOGGER.info("List");
 
-    AvailableRegionListResponse response =
-        service.list(
-            AvailableRegionListRequest.builder()
-                .setTypes(Arrays.asList(NumberType.MOBILE, NumberType.LOCAL))
-                .build());
+    AvailableRegionListResponse response = service.list();
 
     LOGGER.info("Available regions:");
 

@@ -10,7 +10,7 @@ package numbers;
 import com.sinch.sdk.SinchClient;
 import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.NumberType;
-import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumberListRequest;
+import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumbersListQueryParameters;
 import com.sinch.sdk.domains.numbers.models.v1.response.AvailableNumberListResponse;
 import com.sinch.sdk.models.Configuration;
 import java.util.logging.Logger;
@@ -40,8 +40,11 @@ public class SearchForAvailableNumbers {
     String regionCode = "US";
     NumberType type = NumberType.LOCAL;
 
-    AvailableNumberListRequest parameters =
-        AvailableNumberListRequest.builder().setRegionCode(regionCode).setType(type).build();
+    AvailableNumbersListQueryParameters parameters =
+        AvailableNumbersListQueryParameters.builder()
+            .setRegionCode(regionCode)
+            .setType(type)
+            .build();
 
     LOGGER.info("Looking for available numbers");
 

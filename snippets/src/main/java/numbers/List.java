@@ -10,7 +10,7 @@ package numbers;
 import com.sinch.sdk.SinchClient;
 import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.NumberType;
-import com.sinch.sdk.domains.numbers.models.v1.request.ActiveNumberListRequest;
+import com.sinch.sdk.domains.numbers.models.v1.request.ActiveNumbersListQueryParameters;
 import com.sinch.sdk.domains.numbers.models.v1.response.ActiveNumberListResponse;
 import com.sinch.sdk.models.Configuration;
 import java.util.logging.Logger;
@@ -41,7 +41,7 @@ public class List {
 
     ActiveNumberListResponse response =
         service.list(
-            ActiveNumberListRequest.builder()
+            ActiveNumbersListQueryParameters.builder()
                 .setRegionCode("US")
                 .setType(NumberType.LOCAL)
                 .build());
