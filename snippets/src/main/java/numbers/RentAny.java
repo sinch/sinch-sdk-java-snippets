@@ -24,14 +24,14 @@ public class RentAny {
 
   public static void main(String[] args) {
 
-    String projectId = Settings.getProjectId().orElse("my_project_id");
-    String keyId = Settings.getKeyId().orElse("my_key_id");
-    String keySecret = Settings.getKeySecret().orElse("my_key_secret");
+    String projectId = Settings.getProjectId().orElse("MY_PROJECT_ID");
+    String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
+    String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
     // Available regions can be retrieved by using list() function from regions service, see
     // the numbers/regions/List snippet or
     // https://developers.sinch.com/docs/numbers/api-reference/numbers/tag/Available-Regions/
-    String regionCode = "my_region_code";
+    String regionCode = "MY_REGION_CODE";
 
     Configuration configuration =
         Configuration.builder()

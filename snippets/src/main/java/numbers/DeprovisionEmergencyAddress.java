@@ -19,11 +19,11 @@ public class DeprovisionEmergencyAddress {
 
   public static void main(String[] args) {
 
-    String projectId = Settings.getProjectId().orElse("my_project_id");
-    String keyId = Settings.getKeyId().orElse("my_key_id");
-    String keySecret = Settings.getKeySecret().orElse("my_key_secret");
+    String projectId = Settings.getProjectId().orElse("MY_PROJECT_ID");
+    String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
+    String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
-    String phoneNumber = Settings.getPhoneNumber().orElse("my_sinch_phone_number");
+    String phoneNumber = Settings.getPhoneNumber().orElse("MY_SINCH_PHONE_NUMBER");
 
     Configuration configuration =
         Configuration.builder()

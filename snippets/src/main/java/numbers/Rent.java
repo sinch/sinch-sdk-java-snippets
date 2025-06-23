@@ -20,14 +20,14 @@ public class Rent {
 
   public static void main(String[] args) {
 
-    String projectId = Settings.getProjectId().orElse("my_project_id");
-    String keyId = Settings.getKeyId().orElse("my_key_id");
-    String keySecret = Settings.getKeySecret().orElse("my_key_secret");
+    String projectId = Settings.getProjectId().orElse("MY_PROJECT_ID");
+    String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
+    String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
     // Available numbers list can be retrieved by using list() function from available service, see
     // the SearchAvailableSnippet or
     // https://developers.sinch.com/docs/numbers/getting-started/java-sdk/searchavailable
-    String phoneNumber = "available_phone_number_to_be_rented";
+    String phoneNumber = "AVAILABLE_PHONE_NUMBER_TO_BE_RENTED";
 
     Configuration configuration =
         Configuration.builder()
