@@ -26,6 +26,9 @@ public class SearchForAvailableNumbers {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
+    String regionCode = "US";
+    NumberType type = NumberType.LOCAL;
+
     Configuration configuration =
         Configuration.builder()
             .setProjectId(projectId)
@@ -36,9 +39,6 @@ public class SearchForAvailableNumbers {
     SinchClient client = new SinchClient(configuration);
 
     NumbersService service = client.numbers().v1();
-
-    String regionCode = "US";
-    NumberType type = NumberType.LOCAL;
 
     AvailableNumbersListQueryParameters parameters =
         AvailableNumbersListQueryParameters.builder()

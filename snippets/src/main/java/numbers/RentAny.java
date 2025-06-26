@@ -10,11 +10,10 @@ package numbers;
 import com.sinch.sdk.SinchClient;
 import com.sinch.sdk.domains.numbers.api.v1.NumbersService;
 import com.sinch.sdk.domains.numbers.models.v1.ActiveNumber;
-import com.sinch.sdk.domains.numbers.models.v1.Capability;
 import com.sinch.sdk.domains.numbers.models.v1.NumberType;
+import com.sinch.sdk.domains.numbers.models.v1.SmsConfiguration;
 import com.sinch.sdk.domains.numbers.models.v1.request.AvailableNumberRentAnyRequest;
 import com.sinch.sdk.models.Configuration;
-import java.util.Collections;
 import java.util.logging.Logger;
 import utils.Settings;
 
@@ -28,10 +27,14 @@ public class RentAny {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
+    String servicePlanId = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
+
     // Available regions can be retrieved by using list() function from regions service, see
     // the numbers/regions/List snippet or
     // https://developers.sinch.com/docs/numbers/api-reference/numbers/tag/Available-Regions/
     String regionCode = "MY_REGION_CODE";
+
+    NumberType numberType = NumberType.LOCAL;
 
     Configuration configuration =
         Configuration.builder()
@@ -44,16 +47,17 @@ public class RentAny {
 
     NumbersService service = client.numbers().v1();
 
-    Capability capability = Capability.SMS;
-    NumberType numberType = NumberType.LOCAL;
+    SmsConfiguration smsConfiguration =
+        SmsConfiguration.builder().setServicePlanId(servicePlanId).build();
 
-    ActiveNumber response =
-        service.rentAny(
-            AvailableNumberRentAnyRequest.builder()
-                .setCapabilities(Collections.singletonList(capability))
-                .setType(numberType)
-                .setRegionCode(regionCode)
-                .build());
+    AvailableNumberRentAnyRequest parameters =
+        AvailableNumberRentAnyRequest.builder()
+            .setType(numberType)
+            .setRegionCode(regionCode)
+            .setSmsConfiguration(smsConfiguration)
+            .build();
+
+    ActiveNumber response = service.rentAny(parameters);
 
     LOGGER.info(String.format("Rented number: %s", response));
   }
