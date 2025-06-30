@@ -2,3 +2,64 @@
 Sinch Java SDK Code Snippets Repository 
 
 This repository contains code snippets related to [Sinch JAVA SDK](https://github.com/sinch/sinch-sdk-java)
+
+Snippets can be used as starting point to support Sinch products from your own application.
+
+## Requirements
+- JDK 8 or later
+- [Sinch account](https://dashboard.sinch.com)
+
+## Snippet execution
+Launcher helpers are provided to execute snippets and minimize time to setup your first Java application based onto Sinch SDK
+
+### Snippets execution settings
+When executing a snippet you will need to provide certain information about your Sinch account (credentials, Sinch virtual phone number, ...)
+
+This settings can be placed directly in the snippet source or you can choose to edit the [configuration file](./snippets/src/main/resources/config.properties), in which case the settings will be shared and used automatically by each snippet.
+
+### Linux platform
+Launch script is [here](./snippets/launcher)
+
+Execution:
+```shell
+cd snippets
+launcher <SNIPPET_SOURCE_PATH>
+```
+Where `SNIPPET_SOURCE_PATH` is path to snippet source (see [Available Snippets](#available-snippets) for available snippets)
+
+e.g.: 
+```shell
+launcher numbers/SearchForAvailableNumbers
+...
+launcher regions/List
+
+```
+
+## Available Snippets
+
+- Numbers
+  - [numbers/Rent](snippets/src/main/java/numbers/Rent.java)
+  - [numbers/RentAny](snippets/src/main/java/numbers/RentAny.java) 
+  - [numbers/SearchForAvailableNumbers](snippets/src/main/java/numbers/SearchForAvailableNumbers.java)
+  - [numbers/CheckAvailability](snippets/src/main/java/numbers/CheckAvailability.java)
+  - [numbers/List](snippets/src/main/java/numbers/List.java)
+  - [numbers/Update](snippets/src/main/java/numbers/Update.java)
+  - [numbers/Get](snippets/src/main/java/numbers/Get.java)
+  - [numbers/Release](snippets/src/main/java/numbers/Release.java)
+  - Emergency Addresses
+    - [numbers/ValidateEmergencyAddress](snippets/src/main/java/numbers/ValidateEmergencyAddress.java)
+    - [numbers/ProvisionEmergencyAddress](snippets/src/main/java/numbers/ProvisionEmergencyAddress.java)
+    - [numbers/GetEmergencyAddress](snippets/src/main/java/numbers/GetEmergencyAddress.java)
+    - [numbers/DeprovisionEmergencyAddress](snippets/src/main/java/numbers/DeprovisionEmergencyAddress.java)
+  - Regions
+    - [numbers/regions/List](snippets/src/main/java/numbers/regions/List.java) 
+  - Callbacks
+     - [numbers/callback/Get](snippets/src/main/java/numbers/callback/Get.java)
+     - [numbers/callback/Update](snippets/src/main/java/numbers/callback/Update.java)
+
+
+
+
+
+
+
