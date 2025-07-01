@@ -12,3 +12,7 @@ See main [README.md](../../../../../README.md) for how to execute snippets
     - [sms/batches/Replace](./batches/Replace.java)
     - [sms/batches/Cancel](./batches/Cancel.java)
     - [sms/batches/SendDeliveryFeedback](./batches/SendDeliveryFeedback.java)
+  - Delivery reports
+    - [sms/deliveryReports/Get](./deliveryReports/Get.java) 
+    - [sms/deliveryReports/GetForNumber](./deliveryReports/GetForNumber.java)
+    - [sms/deliveryReports/List](./deliveryReports/List.java) 
