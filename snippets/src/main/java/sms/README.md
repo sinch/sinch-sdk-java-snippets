@@ -18,5 +18,13 @@ See main [README.md](../../../../../README.md) for how to execute snippets
     - [sms/deliveryReports/List](./deliveryReports/List.java)
   - Inbounds
     - [sms/inbounds/List](./inbounds/List.java)
-    - [sms/inbounds/Get](./inbounds/Get.java) 
-
+    - [sms/inbounds/Get](./inbounds/Get.java)
+  - Groups
+    - [sms/groups/List](./groups/List.java)
+    - [sms/groups/Create](./groups/Create.java)
+    - [sms/groups/Get](./groups/Get.java)
+    - [sms/groups/Update](./groups/Update.java)
+    - [sms/groups/Replace](./groups/Replace.java)
+    - [sms/groups/Delete](./groups/Delete.java)
+    - [sms/groups/ListMembers](./groups/ListMembers.java) 
+  
