@@ -15,4 +15,8 @@ See main [README.md](../../../../../README.md) for how to execute snippets
   - Delivery reports
     - [sms/deliveryReports/Get](./deliveryReports/Get.java) 
     - [sms/deliveryReports/GetForNumber](./deliveryReports/GetForNumber.java)
-    - [sms/deliveryReports/List](./deliveryReports/List.java) 
+    - [sms/deliveryReports/List](./deliveryReports/List.java)
+  - Inbounds
+    - [sms/inbounds/List](./inbounds/List.java)
+    - [sms/inbounds/Get](./inbounds/Get.java) 
+
