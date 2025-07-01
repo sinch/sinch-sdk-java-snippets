@@ -27,7 +27,7 @@ public class RentAny {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
-    String servicePlanId = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
+    String servicePlanIdToAssociateWithTheNumber = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
 
     // Available regions can be retrieved by using list() function from regions service, see
     // the numbers/regions/List snippet or
@@ -48,7 +48,7 @@ public class RentAny {
     NumbersService service = client.numbers().v1();
 
     SmsConfiguration smsConfiguration =
-        SmsConfiguration.builder().setServicePlanId(servicePlanId).build();
+        SmsConfiguration.builder().setServicePlanId(servicePlanIdToAssociateWithTheNumber).build();
 
     AvailableNumberRentAnyRequest parameters =
         AvailableNumberRentAnyRequest.builder()

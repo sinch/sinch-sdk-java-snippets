@@ -26,12 +26,13 @@ public class Rent {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
-    String servicePlanId = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
+    String servicePlanIdToAssociateWithTheNumber =
+        Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
 
     // Available numbers list can be retrieved by using list() function from available service, see
     // the SearchAvailableSnippet or
     // https://developers.sinch.com/docs/numbers/getting-started/java-sdk/searchavailable
-    String phoneNumber = "AVAILABLE_PHONE_NUMBER_TO_BE_RENTED";
+    String phoneNumberToBeRented = "AVAILABLE_PHONE_NUMBER_TO_BE_RENTED";
 
     Configuration configuration =
         Configuration.builder()
@@ -45,12 +46,12 @@ public class Rent {
     NumbersService service = client.numbers().v1();
 
     SmsConfiguration smsConfiguration =
-        SmsConfiguration.builder().setServicePlanId(servicePlanId).build();
+        SmsConfiguration.builder().setServicePlanId(servicePlanIdToAssociateWithTheNumber).build();
 
     AvailableNumberRentRequest parameters =
         AvailableNumberRentRequest.builder().setSmsConfiguration(smsConfiguration).build();
 
-    ActiveNumber response = service.rent(phoneNumber, parameters);
+    ActiveNumber response = service.rent(phoneNumberToBeRented, parameters);
 
     LOGGER.info(String.format("Rented number: %s", response));
   }
