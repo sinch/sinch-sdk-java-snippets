@@ -36,11 +36,11 @@ public class GetForNumber {
 
     SinchClient client = new SinchClient(configuration);
 
-    DeliveryReportsService service = client.sms().v1().deliveryReports();
+    DeliveryReportsService deliveryReportsService = client.sms().v1().deliveryReports();
 
     LOGGER.info(String.format("Get delivery report for number '%s'", phoneNumber));
 
-    RecipientDeliveryReport response = service.getForNumber(batchId, phoneNumber);
+    RecipientDeliveryReport response = deliveryReportsService.getForNumber(batchId, phoneNumber);
 
     LOGGER.info("Response :" + response);
   }

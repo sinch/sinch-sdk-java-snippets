@@ -35,11 +35,11 @@ public class Get {
 
     SinchClient client = new SinchClient(configuration);
 
-    GroupsService service = client.sms().v1().groups();
+    GroupsService groupsService = client.sms().v1().groups();
 
     LOGGER.info(String.format("Get information for group with ID '%s'", groupId));
 
-    Group response = service.get(groupId);
+    Group response = groupsService.get(groupId);
 
     LOGGER.info("Response: " + response);
   }

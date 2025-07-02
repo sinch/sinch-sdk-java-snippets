@@ -40,14 +40,14 @@ public class Update {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
-    LOGGER.info(String.format("Updating batch ID '%s'", batchId));
+    LOGGER.info(String.format("Updating batch with ID '%s'", batchId));
 
     UpdateTextRequest request =
         UpdateTextRequest.builder().setToRemove(toRemove).setToAdd(toAdd).build();
 
-    BatchResponse response = service.update(batchId, request);
+    BatchResponse response = batchesService.update(batchId, request);
 
     LOGGER.info("Response: " + response);
   }

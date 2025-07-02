@@ -35,11 +35,11 @@ public class Cancel {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
-    LOGGER.info(String.format("Cancelling batch ID '%s'", batchId));
+    LOGGER.info(String.format("Cancelling batch with ID '%s'", batchId));
 
-    BatchResponse response = service.cancel(batchId);
+    BatchResponse response = batchesService.cancel(batchId);
 
     LOGGER.info("Response: " + response);
   }

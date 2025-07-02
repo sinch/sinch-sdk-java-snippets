@@ -32,11 +32,11 @@ public class List {
 
     SinchClient client = new SinchClient(configuration);
 
-    DeliveryReportsService service = client.sms().v1().deliveryReports();
+    DeliveryReportsService deliveryReportsService = client.sms().v1().deliveryReports();
 
     LOGGER.info("List Delivery Reports");
 
     LOGGER.info("Response:");
-    service.list().iterator().forEachRemaining(f -> LOGGER.info(f.toString()));
+    deliveryReportsService.list().iterator().forEachRemaining(f -> LOGGER.info(f.toString()));
   }
 }

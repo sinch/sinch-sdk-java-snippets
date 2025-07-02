@@ -33,11 +33,11 @@ public class List {
 
     SinchClient client = new SinchClient(configuration);
 
-    GroupsService service = client.sms().v1().groups();
+    GroupsService groupsService = client.sms().v1().groups();
 
     LOGGER.info("List groups");
 
-    ListGroupsResponse response = service.list();
+    ListGroupsResponse response = groupsService.list();
 
     LOGGER.info("Response:");
     response.iterator().forEachRemaining(f -> LOGGER.info(f.toString()));

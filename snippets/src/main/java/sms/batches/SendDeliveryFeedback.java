@@ -38,14 +38,14 @@ public class SendDeliveryFeedback {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
-    LOGGER.info(String.format("Sending delivery feedback for batch ID '%s'", batchId));
+    LOGGER.info(String.format("Sending delivery feedback for batch with ID '%s'", batchId));
 
     SendDeliveryFeedbackRequest request =
         SendDeliveryFeedbackRequest.builder().setRecipients(recipients).build();
 
-    service.sendDeliveryFeedback(batchId, request);
+    batchesService.sendDeliveryFeedback(batchId, request);
 
     LOGGER.info("Done");
   }

@@ -40,13 +40,13 @@ public class Replace {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
-    LOGGER.info(String.format("Replacing batch ID '%s'", batchId));
+    LOGGER.info(String.format("Replacing batch with ID '%s'", batchId));
 
     TextRequest request = TextRequest.builder().setTo(recipients).setBody(body).build();
 
-    BatchResponse response = service.replace(batchId, request);
+    BatchResponse response = batchesService.replace(batchId, request);
 
     LOGGER.info("Response: " + response);
   }

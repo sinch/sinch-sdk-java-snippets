@@ -40,13 +40,13 @@ public class Create {
 
     SinchClient client = new SinchClient(configuration);
 
-    GroupsService service = client.sms().v1().groups();
+    GroupsService groupsService = client.sms().v1().groups();
 
     LOGGER.info("Creating group");
 
     GroupRequest request = GroupRequest.builder().setName(groupName).setMembers(members).build();
 
-    Group response = service.create(request);
+    Group response = groupsService.create(request);
 
     LOGGER.info("Response: " + response);
   }

@@ -37,13 +37,13 @@ public class Update {
 
     SinchClient client = new SinchClient(configuration);
 
-    GroupsService service = client.sms().v1().groups();
+    GroupsService groupsService = client.sms().v1().groups();
 
     GroupUpdateRequest request = GroupUpdateRequest.builder().setName(groupName).build();
 
     LOGGER.info(String.format("Update group with ID '%s'", groupId));
 
-    Group response = service.update(groupId, request);
+    Group response = groupsService.update(groupId, request);
 
     LOGGER.info("Response: " + response);
   }

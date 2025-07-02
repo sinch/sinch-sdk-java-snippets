@@ -31,12 +31,12 @@ public class List {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
     LOGGER.info("List batches");
 
     LOGGER.info("Response:");
 
-    service.list().iterator().forEachRemaining(f -> LOGGER.info(f.toString()));
+    batchesService.list().iterator().forEachRemaining(f -> LOGGER.info(f.toString()));
   }
 }

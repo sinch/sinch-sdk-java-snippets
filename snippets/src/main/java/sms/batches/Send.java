@@ -28,7 +28,7 @@ public class Send {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
     String phoneNumber = Settings.getPhoneNumber().orElse("MY_SINCH_PHONE_NUMBER");
-    
+
     List<String> recipients = Arrays.asList("A_RECIPIENT_PHONE_NUMBER");
     String body = "This is a test SMS message using the Sinch Java SDK.";
 
@@ -41,14 +41,14 @@ public class Send {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
-    LOGGER.info(String.format("Sending SMS Text to '%s'", phoneNumber));
+    LOGGER.info(String.format("Sending SMS Text to recipients '%s'", recipients));
 
     TextRequest request =
         TextRequest.builder().setTo(recipients).setBody(body).setFrom(phoneNumber).build();
 
-    BatchResponse response = service.send(request);
+    BatchResponse response = batchesService.send(request);
 
     LOGGER.info("Response: " + response);
   }

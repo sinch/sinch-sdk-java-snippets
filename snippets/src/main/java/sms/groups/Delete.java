@@ -34,11 +34,11 @@ public class Delete {
 
     SinchClient client = new SinchClient(configuration);
 
-    GroupsService service = client.sms().v1().groups();
+    GroupsService groupsService = client.sms().v1().groups();
 
     LOGGER.info(String.format("Deleting group with ID '%s'", groupId));
 
-    service.delete(groupId);
+    groupsService.delete(groupId);
 
     LOGGER.info("Done");
   }

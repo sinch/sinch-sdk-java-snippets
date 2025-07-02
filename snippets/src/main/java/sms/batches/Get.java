@@ -35,11 +35,11 @@ public class Get {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
-    LOGGER.info(String.format("Get information for batch ID '%s'", batchId));
+    LOGGER.info(String.format("Get information for batch with ID '%s'", batchId));
 
-    BatchResponse response = service.get(batchId);
+    BatchResponse response = batchesService.get(batchId);
 
     LOGGER.info("Response: " + response);
   }

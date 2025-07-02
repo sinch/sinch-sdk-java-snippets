@@ -41,14 +41,14 @@ public class DryRun {
 
     SinchClient client = new SinchClient(configuration);
 
-    BatchesService service = client.sms().v1().batches();
+    BatchesService batchesService = client.sms().v1().batches();
 
     LOGGER.info("DryRun Request");
 
     TextRequest request =
         TextRequest.builder().setFrom(phoneNumber).setTo(recipients).setBody(body).build();
 
-    DryRunResponse response = service.dryRun(request);
+    DryRunResponse response = batchesService.dryRun(request);
 
     LOGGER.info("Response: " + response);
   }

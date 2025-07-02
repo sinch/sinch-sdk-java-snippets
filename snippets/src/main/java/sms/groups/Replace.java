@@ -40,13 +40,13 @@ public class Replace {
 
     SinchClient client = new SinchClient(configuration);
 
-    GroupsService service = client.sms().v1().groups();
+    GroupsService groupsService = client.sms().v1().groups();
 
     GroupRequest request = GroupRequest.builder().setMembers(members).build();
 
     LOGGER.info(String.format("Replace group with ID '%s'", groupId));
 
-    Group response = service.replace(groupId, request);
+    Group response = groupsService.replace(groupId, request);
 
     LOGGER.info("Response :" + response);
   }

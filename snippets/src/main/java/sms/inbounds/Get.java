@@ -35,11 +35,11 @@ public class Get {
 
     SinchClient client = new SinchClient(configuration);
 
-    InboundsService service = client.sms().v1().inbounds();
+    InboundsService inboundsService = client.sms().v1().inbounds();
 
-    LOGGER.info(String.format("Get inbound with ID '%s'", inboundId));
+    LOGGER.info(String.format("Get inbound message with ID '%s'", inboundId));
 
-    InboundMessage response = service.get(inboundId);
+    InboundMessage response = inboundsService.get(inboundId);
 
     LOGGER.info("Response: " + response);
   }

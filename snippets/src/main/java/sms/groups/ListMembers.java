@@ -35,11 +35,11 @@ public class ListMembers {
 
     SinchClient client = new SinchClient(configuration);
 
-    GroupsService service = client.sms().v1().groups();
+    GroupsService groupsService = client.sms().v1().groups();
 
-    LOGGER.info("List members for groupId: " + groupId);
+    LOGGER.info(String.format("List members within group with ID '%s'", groupId));
 
-    Collection<String> response = service.listMembers(groupId);
+    Collection<String> response = groupsService.listMembers(groupId);
 
     LOGGER.info("Response:");
     response.iterator().forEachRemaining(f -> LOGGER.info(f.toString()));
