@@ -37,29 +37,5 @@ launcher regions/List
 
 ## Available Snippets
 
-- Numbers
-  - [numbers/Rent](snippets/src/main/java/numbers/Rent.java)
-  - [numbers/RentAny](snippets/src/main/java/numbers/RentAny.java) 
-  - [numbers/SearchForAvailableNumbers](snippets/src/main/java/numbers/SearchForAvailableNumbers.java)
-  - [numbers/CheckAvailability](snippets/src/main/java/numbers/CheckAvailability.java)
-  - [numbers/List](snippets/src/main/java/numbers/List.java)
-  - [numbers/Update](snippets/src/main/java/numbers/Update.java)
-  - [numbers/Get](snippets/src/main/java/numbers/Get.java)
-  - [numbers/Release](snippets/src/main/java/numbers/Release.java)
-  - Emergency Addresses
-    - [numbers/ValidateEmergencyAddress](snippets/src/main/java/numbers/ValidateEmergencyAddress.java)
-    - [numbers/ProvisionEmergencyAddress](snippets/src/main/java/numbers/ProvisionEmergencyAddress.java)
-    - [numbers/GetEmergencyAddress](snippets/src/main/java/numbers/GetEmergencyAddress.java)
-    - [numbers/DeprovisionEmergencyAddress](snippets/src/main/java/numbers/DeprovisionEmergencyAddress.java)
-  - Regions
-    - [numbers/regions/List](snippets/src/main/java/numbers/regions/List.java) 
-  - Callbacks
-     - [numbers/callback/Get](snippets/src/main/java/numbers/callback/Get.java)
-     - [numbers/callback/Update](snippets/src/main/java/numbers/callback/Update.java)
-
-
-
-
-
-
-
+- Numbers: [README.md](snippets/src/main/java/numbers/README.md)
+- SMS: [README.md](snippets/src/main/java/sms/README.md)
