@@ -36,7 +36,7 @@ public class ProvisionEmergencyAddress {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("Provisioning EmergencyAddress for: " + phoneNumber);
 
@@ -54,7 +54,7 @@ public class ProvisionEmergencyAddress {
             .setDisplayName("Emergency Address Display Name")
             .setAddress(emergencyAddress)
             .build();
-    EmergencyAddress value = service.provisionEmergencyAddress(phoneNumber, request);
+    EmergencyAddress value = numbersService.provisionEmergencyAddress(phoneNumber, request);
 
     LOGGER.info("Response: " + value);
   }

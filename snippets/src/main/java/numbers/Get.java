@@ -35,10 +35,10 @@ public class Get {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("Get for: " + phoneNumber);
-    ActiveNumber value = service.get(phoneNumber);
+    ActiveNumber value = numbersService.get(phoneNumber);
 
     LOGGER.info("Response: " + value);
   }

@@ -43,7 +43,7 @@ public class Rent {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     SmsConfiguration smsConfiguration =
         SmsConfiguration.builder().setServicePlanId(servicePlanIdToAssociateWithTheNumber).build();
@@ -51,7 +51,7 @@ public class Rent {
     AvailableNumberRentRequest parameters =
         AvailableNumberRentRequest.builder().setSmsConfiguration(smsConfiguration).build();
 
-    ActiveNumber response = service.rent(phoneNumberToBeRented, parameters);
+    ActiveNumber response = numbersService.rent(phoneNumberToBeRented, parameters);
 
     LOGGER.info(String.format("Rented number: %s", response));
   }

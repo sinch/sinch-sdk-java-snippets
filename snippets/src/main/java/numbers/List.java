@@ -35,12 +35,12 @@ public class List {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("Listing active numbers");
 
     ActiveNumberListResponse response =
-        service.list(
+        numbersService.list(
             ActiveNumbersListQueryParameters.builder()
                 .setRegionCode("US")
                 .setType(NumberType.LOCAL)

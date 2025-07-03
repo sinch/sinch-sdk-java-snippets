@@ -33,11 +33,11 @@ public class Get {
 
     SinchClient client = new SinchClient(configuration);
 
-    CallbackConfigurationService service = client.numbers().v1().callback();
+    CallbackConfigurationService callbackConfigurationService = client.numbers().v1().callback();
 
     LOGGER.info("Get");
 
-    CallbackConfigurationResponse value = service.get();
+    CallbackConfigurationResponse value = callbackConfigurationService.get();
 
     LOGGER.info("Response :" + value);
   }

@@ -36,14 +36,14 @@ public class Update {
 
     SinchClient client = new SinchClient(configuration);
 
-    CallbackConfigurationService service = client.numbers().v1().callback();
+    CallbackConfigurationService callbackConfigurationService = client.numbers().v1().callback();
 
     LOGGER.info("Update callback HMAC value");
 
     CallbackConfigurationUpdateRequest parameters =
         CallbackConfigurationUpdateRequest.builder().setHmacSecret(hmac).build();
 
-    CallbackConfigurationResponse value = service.update(parameters);
+    CallbackConfigurationResponse value = callbackConfigurationService.update(parameters);
 
     LOGGER.info("Response :" + value);
   }
