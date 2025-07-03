@@ -27,7 +27,8 @@ public class RentAny {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
-    String servicePlanIdToAssociateWithTheNumber = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
+    String servicePlanIdToAssociateWithTheNumber =
+        Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
 
     // Available regions can be retrieved by using list() function from regions service, see
     // the numbers/regions/List snippet or
@@ -45,7 +46,7 @@ public class RentAny {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     SmsConfiguration smsConfiguration =
         SmsConfiguration.builder().setServicePlanId(servicePlanIdToAssociateWithTheNumber).build();
@@ -57,7 +58,7 @@ public class RentAny {
             .setSmsConfiguration(smsConfiguration)
             .build();
 
-    ActiveNumber response = service.rentAny(parameters);
+    ActiveNumber response = numbersService.rentAny(parameters);
 
     LOGGER.info(String.format("Rented number: %s", response));
   }

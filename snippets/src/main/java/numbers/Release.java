@@ -35,11 +35,11 @@ public class Release {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("Release for: " + phoneNumber);
 
-    ActiveNumber value = service.release(phoneNumber);
+    ActiveNumber value = numbersService.release(phoneNumber);
 
     LOGGER.info("Response: " + value);
   }

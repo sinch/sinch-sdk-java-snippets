@@ -38,12 +38,12 @@ public class Update {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     ActiveNumberUpdateRequest updateRequest =
         ActiveNumberUpdateRequest.builder().setDisplayName(displayName).build();
 
-    ActiveNumber response = service.update(phoneNumber, updateRequest);
+    ActiveNumber response = numbersService.update(phoneNumber, updateRequest);
 
     LOGGER.info(String.format("Updated number: %s", response));
   }

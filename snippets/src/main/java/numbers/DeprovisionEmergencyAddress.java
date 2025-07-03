@@ -34,10 +34,10 @@ public class DeprovisionEmergencyAddress {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("De-provisioning EmergencyAddress for: " + phoneNumber);
 
-    service.deprovisionEmergencyAddress(phoneNumber);
+    numbersService.deprovisionEmergencyAddress(phoneNumber);
   }
 }

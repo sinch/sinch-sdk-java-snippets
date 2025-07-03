@@ -36,7 +36,7 @@ public class ValidateEmergencyAddress {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("Validate EmergencyAddress for: " + phoneNumber);
 
@@ -54,7 +54,7 @@ public class ValidateEmergencyAddress {
             .setDisplayName("Emergency Address Display Name")
             .setAddress(emergencyAddress)
             .build();
-    ValidateAddressResponse value = service.validateEmergencyAddress(phoneNumber, request);
+    ValidateAddressResponse value = numbersService.validateEmergencyAddress(phoneNumber, request);
 
     LOGGER.info("Response: " + value);
   }

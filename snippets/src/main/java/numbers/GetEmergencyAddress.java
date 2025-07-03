@@ -22,7 +22,6 @@ public class GetEmergencyAddress {
     String projectId = Settings.getProjectId().orElse("MY_PROJECT_ID");
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
-    ;
 
     String phoneNumber = Settings.getPhoneNumber().orElse("MY_SINCH_PHONE_NUMBER");
 
@@ -35,11 +34,11 @@ public class GetEmergencyAddress {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("Get EmergencyAddress for: " + phoneNumber);
 
-    EmergencyAddress response = service.getEmergencyAddress(phoneNumber);
+    EmergencyAddress response = numbersService.getEmergencyAddress(phoneNumber);
 
     LOGGER.info("Response: " + response);
   }

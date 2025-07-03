@@ -38,7 +38,7 @@ public class SearchForAvailableNumbers {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     AvailableNumbersListQueryParameters parameters =
         AvailableNumbersListQueryParameters.builder()
@@ -48,7 +48,7 @@ public class SearchForAvailableNumbers {
 
     LOGGER.info("Looking for available numbers");
 
-    AvailableNumberListResponse response = service.searchForAvailableNumbers(parameters);
+    AvailableNumberListResponse response = numbersService.searchForAvailableNumbers(parameters);
 
     response
         .iterator()

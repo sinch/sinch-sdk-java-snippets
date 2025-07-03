@@ -35,11 +35,11 @@ public class CheckAvailability {
 
     SinchClient client = new SinchClient(configuration);
 
-    NumbersService service = client.numbers().v1();
+    NumbersService numbersService = client.numbers().v1();
 
     LOGGER.info("CheckAvailability for: " + phoneNumber);
 
-    AvailableNumber value = service.checkAvailability(phoneNumber);
+    AvailableNumber value = numbersService.checkAvailability(phoneNumber);
 
     LOGGER.info("Response: " + value);
   }

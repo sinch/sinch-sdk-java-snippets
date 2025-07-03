@@ -33,11 +33,11 @@ public class List {
 
     SinchClient client = new SinchClient(configuration);
 
-    AvailableRegionsService service = client.numbers().v1().regions();
+    AvailableRegionsService availableRegionsService = client.numbers().v1().regions();
 
     LOGGER.info("List");
 
-    AvailableRegionListResponse response = service.list();
+    AvailableRegionListResponse response = availableRegionsService.list();
 
     LOGGER.info("Available regions:");
 
