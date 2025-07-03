@@ -1,2 +1,4 @@
 .idea
 **/target
+
+snippets/src/main/resources/config.properties
