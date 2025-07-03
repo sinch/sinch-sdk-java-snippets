@@ -12,6 +12,8 @@ import com.sinch.sdk.domains.sms.api.v1.GroupsService;
 import com.sinch.sdk.domains.sms.models.v1.groups.Group;
 import com.sinch.sdk.domains.sms.models.v1.groups.request.GroupUpdateRequest;
 import com.sinch.sdk.models.Configuration;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 import utils.Settings;
 
@@ -27,6 +29,8 @@ public class Update {
 
     String groupId = "A_GROUP_ID";
     String groupName = "New name updated";
+    List<String> toRemove = Arrays.asList("+11111111111", "+29999999999");
+    List<String> toAdd = Arrays.asList("+123456789", "+987654321");
 
     Configuration configuration =
         Configuration.builder()
@@ -39,7 +43,8 @@ public class Update {
 
     GroupsService groupsService = client.sms().v1().groups();
 
-    GroupUpdateRequest request = GroupUpdateRequest.builder().setName(groupName).build();
+    GroupUpdateRequest request =
+        GroupUpdateRequest.builder().setName(groupName).setAdd(toAdd).setRemove(toRemove).build();
 
     LOGGER.info(String.format("Update group with ID '%s'", groupId));
 

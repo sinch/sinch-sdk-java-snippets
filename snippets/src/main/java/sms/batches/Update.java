@@ -28,8 +28,8 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
     String batchId = "A_BATCH_ID";
-    List<String> toRemove = Arrays.asList("11111111111", "29999999999");
-    List<String> toAdd = Arrays.asList("123456789", "987654321");
+    List<String> toRemove = Arrays.asList("+11111111111", "+29999999999");
+    List<String> toAdd = Arrays.asList("+123456789", "+987654321");
 
     Configuration configuration =
         Configuration.builder()
