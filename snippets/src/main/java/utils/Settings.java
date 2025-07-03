@@ -43,6 +43,10 @@ public class Settings {
     return get("SINCH_SERVICE_PLAN_ID");
   }
 
+  public static Optional<String> getSMSRegion() {
+    return get("SINCH_SMS_REGION");
+  }
+
   public static Optional<String> getPhoneNumber() {
     return get("SINCH_PHONE_NUMBER");
   }

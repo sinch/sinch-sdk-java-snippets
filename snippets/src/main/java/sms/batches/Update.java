@@ -12,6 +12,7 @@ import com.sinch.sdk.domains.sms.api.v1.BatchesService;
 import com.sinch.sdk.domains.sms.models.v1.batches.request.UpdateTextRequest;
 import com.sinch.sdk.domains.sms.models.v1.batches.response.BatchResponse;
 import com.sinch.sdk.models.Configuration;
+import com.sinch.sdk.models.SMSRegion;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
@@ -26,6 +27,7 @@ public class Update {
     String projectId = Settings.getProjectId().orElse("MY_PROJECT_ID");
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
+    String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
     String batchId = "A_BATCH_ID";
     List<String> toRemove = Arrays.asList("+11111111111", "+29999999999");
@@ -36,6 +38,7 @@ public class Update {
             .setProjectId(projectId)
             .setKeyId(keyId)
             .setKeySecret(keySecret)
+            .setSmsRegion(SMSRegion.from(smsRegion))
             .build();
 
     SinchClient client = new SinchClient(configuration);
