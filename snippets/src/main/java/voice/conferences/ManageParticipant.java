@@ -1,3 +1,10 @@
+/**
+ * Sinch Java Snippet
+ *
+ * <p>This snippet is available at https://github.com/sinch/sinch-sdk-java-snippets
+ *
+ * <p>See https://github.com/sinch/sinch-sdk-java-snippets/blob/main/README.md for details
+ */
 package voice.conferences;
 
 import com.sinch.sdk.SinchClient;
