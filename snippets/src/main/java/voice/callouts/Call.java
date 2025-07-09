@@ -37,7 +37,7 @@ public class Call {
 
     CalloutsService calloutsService = client.voice().v1().callouts();
 
-    LOGGER.info(String.format("Calling phone number '%s'", phoneNumberToBeCalled));
+    LOGGER.info(String.format("Calling phone number '%s'", recipientPhoneNumber));
 
     CalloutRequestTTS request =
         CalloutRequestTTS.builder()
