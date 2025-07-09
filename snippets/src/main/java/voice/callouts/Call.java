@@ -24,7 +24,7 @@ public class Call {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String phoneNumberToBeCalled = "PHONE_NUMBER_TO_BE_CALLED";
+    String recipientPhoneNumber = "PHONE_NUMBER_TO_BE_CALLED";
     String textToSpeech = "Hello, this is a call initiated from Sinch Java SDK. Goodbye.";
 
     Configuration configuration =
@@ -41,7 +41,7 @@ public class Call {
 
     CalloutRequestTTS request =
         CalloutRequestTTS.builder()
-            .setDestination(DestinationPstn.from(phoneNumberToBeCalled))
+            .setDestination(DestinationPstn.from(recipientPhoneNumber))
             .setText(textToSpeech)
             .build();
 
