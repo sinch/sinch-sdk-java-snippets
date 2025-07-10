@@ -14,9 +14,9 @@ import com.sinch.sdk.models.Configuration;
 import java.util.logging.Logger;
 import utils.Settings;
 
-public class UnassignNumber {
+public class UnAssignNumber {
 
-  private static final Logger LOGGER = Logger.getLogger(UnassignNumber.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(UnAssignNumber.class.getName());
 
   public static void main(String[] args) {
 

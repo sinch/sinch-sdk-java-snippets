@@ -18,6 +18,6 @@ See main [README.md](../../../../../README.md) for how to execute snippets
 - Applications
   - [voice/applications/ListNumbers](./applications/ListNumbers.java)
   - [voice/applications/AssignNumbers](./applications/AssignNumbers.java)
-  - [voice/applications/UnassignNumber](./applications/UnassignNumber.java)
+  - [voice/applications/UnAssignNumber](./applications/UnAssignNumber.java)
   - [voice/applications/GetCallbackUrls](./applications/GetCallbackUrls.java)
   - [voice/applications/UpdateCallbackUrls](./applications/UpdateCallbackUrls.java)
