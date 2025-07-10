@@ -25,7 +25,7 @@ public class ReportByIdentity {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String destinationPhoneNumber = "PHONE_NUMBER_WHICH_RECEVEID_THE_VERIFICATION_CODE";
+    String destinationPhoneNumber = "PHONE_NUMBER_WHICH_RECEIVED_THE_VERIFICATION_CODE";
     String receivedVerificationCode = "A_RECEIVED_VERIFICATION_CODE";
 
     Configuration configuration =

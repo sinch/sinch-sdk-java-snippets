@@ -24,7 +24,7 @@ public class ReportById {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String verificationID = "A_VERIFICATION_ID";
+    String verificationId = "A_VERIFICATION_ID";
     String receivedVerificationCode = "A_RECEIVED_VERIFICATION_CODE";
 
     Configuration configuration =
@@ -39,13 +39,13 @@ public class ReportById {
         client.verification().v1().verificationReport();
 
     LOGGER.info(
-        String.format("Report SMS verification code for verification ID '%s'", verificationID));
+        String.format("Report SMS verification code for verification ID '%s'", verificationId));
 
     VerificationReportRequestSms request =
         VerificationReportRequestSms.builder().setCode(receivedVerificationCode).build();
 
     VerificationReportResponse response =
-        verificationReportService.reportSmsById(verificationID, request);
+        verificationReportService.reportSmsById(verificationId, request);
 
     LOGGER.info("Response: " + response);
   }

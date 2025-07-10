@@ -23,7 +23,7 @@ public class GetById {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String verificationID = "A_VERIFICATION_ID";
+    String verificationId = "A_VERIFICATION_ID";
 
     Configuration configuration =
         Configuration.builder()
@@ -36,9 +36,9 @@ public class GetById {
     VerificationStatusService verificationStatusService =
         client.verification().v1().verificationStatus();
 
-    LOGGER.info(String.format("Verification status for verification ID '%s'", verificationID));
+    LOGGER.info(String.format("Verification status for verification ID '%s'", verificationId));
 
-    VerificationStatusResponse response = verificationStatusService.getById(verificationID);
+    VerificationStatusResponse response = verificationStatusService.getById(verificationId);
 
     LOGGER.info("Response: " + response);
   }
