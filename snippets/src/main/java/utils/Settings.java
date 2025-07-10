@@ -47,6 +47,14 @@ public class Settings {
     return get("SINCH_SMS_REGION");
   }
 
+  public static Optional<String> getApplicationKey() {
+    return get("SINCH_APPLICATION_API_KEY");
+  }
+
+  public static Optional<String> getApplicationSecret() {
+    return get("SINCH_APPLICATION_API_SECRET");
+  }
+
   public static Optional<String> getPhoneNumber() {
     return get("SINCH_PHONE_NUMBER");
   }
