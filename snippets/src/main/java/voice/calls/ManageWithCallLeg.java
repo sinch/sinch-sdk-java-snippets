@@ -49,7 +49,7 @@ public class ManageWithCallLeg {
     Collection<SvamlInstruction> instructions =
         Collections.singletonList(
             SvamlInstructionSay.builder()
-                .setText("Hello, the call is over, hanging up now.  Goodbye")
+                .setText("Hello, the call is over, hanging up now. Goodbye")
                 .build());
 
     SvamlControl request =

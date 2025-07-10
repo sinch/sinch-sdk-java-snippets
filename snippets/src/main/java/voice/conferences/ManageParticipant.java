@@ -43,7 +43,7 @@ public class ManageParticipant {
 
     LOGGER.info(
         String.format(
-            "Manage participant with ID '%s' for conference with ID'%s'. Setting command to '%s'"
+            "Manage participant with ID '%s' for conference with ID '%s'. Setting command to '%s'"
                 + " and music on hold to '%s'",
             callId, conferenceId, command, moh));
 

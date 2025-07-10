@@ -45,7 +45,7 @@ public class Update {
 
     SvamlAction action = SvamlActionHangup.DEFAULT;
 
-    SvamlInstruction instruction = SvamlInstructionSay.builder().setText("Good bye").build();
+    SvamlInstruction instruction = SvamlInstructionSay.builder().setText("Goodbye").build();
 
     Collection<SvamlInstruction> instructions = Collections.singletonList(instruction);
 
