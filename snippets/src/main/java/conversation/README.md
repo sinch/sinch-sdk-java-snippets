@@ -9,3 +9,5 @@ See main [README.md](../../../../../README.md) for how to execute snippets
   - [conversation/application/Get](./application/Get.java)
   - [conversation/application/Delete](./application/Delete.java)
   - [conversation/application/Update](./application/Update.java)
+- Capability
+  - [conversation/capability/Capability](./capability/Capability.java)
