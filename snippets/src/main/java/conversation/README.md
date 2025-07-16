@@ -33,5 +33,10 @@ See main [README.md](../../../../../README.md) for how to execute snippets
   - [conversation/conversations/InjectEvent](./conversations/InjectEvent.java)
   - [conversation/conversations/StopActive](./conversations/StopActive.java)
   - [conversation/conversations/InjectMessage](./conversations/InjectMessage.java)
+- Events
+  - [conversation/events/Send](./events/Send.java)
+  - [conversation/events/Get](./events/Get.java)
+  - [conversation/events/Delete](./events/Delete.java)
+  - [conversation/events/List](./events/List.java)
 - Capability
   - [conversation/capability/Capability](./capability/Capability.java)
