@@ -42,3 +42,9 @@ See main [README.md](../../../../../README.md) for how to execute snippets
   - [conversation/transcoding/Transcode](./transcoding/Transcode.java)
 - Capability
   - [conversation/capability/Capability](./capability/Capability.java)
+- Webhooks
+  - [conversation/webhooks/List](./webhooks/List.java)
+  - [conversation/webhooks/Create](./webhooks/Create.java)
+  - [conversation/webhooks/Get](./webhooks/Get.java)
+  - [conversation/webhooks/Update](./webhooks/Update.java)
+  - [conversation/webhooks/Delete](./webhooks/Delete.java)
