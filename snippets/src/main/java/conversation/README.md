@@ -38,5 +38,7 @@ See main [README.md](../../../../../README.md) for how to execute snippets
   - [conversation/events/Get](./events/Get.java)
   - [conversation/events/Delete](./events/Delete.java)
   - [conversation/events/List](./events/List.java)
+- Transcoding
+  - [conversation/transcoding/Transcode](./transcoding/Transcode.java)
 - Capability
   - [conversation/capability/Capability](./capability/Capability.java)
