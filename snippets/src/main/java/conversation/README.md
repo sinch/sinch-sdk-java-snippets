@@ -23,5 +23,15 @@ See main [README.md](../../../../../README.md) for how to execute snippets
   - [conversation/contact/Update](./contact/Update.java)
   - [conversation/contact/Merge](./contact/Merge.java)
   - [conversation/contact/GetChannelProfile](./contact/GetChannelProfile.java)  
+- Conversation
+  - [conversation/conversations/List](./conversations/List.java)
+  - [conversation/conversations/Create](./conversations/Create.java)
+  - [conversation/conversations/Get](./conversations/Get.java)
+  - [conversation/conversations/Delete](./conversations/Delete.java)
+  - [conversation/conversations/Update](./conversations/Update.java)
+  - [conversation/conversations/ListRecent](./conversations/ListRecent.java)
+  - [conversation/conversations/InjectEvent](./conversations/InjectEvent.java)
+  - [conversation/conversations/StopActive](./conversations/StopActive.java)
+  - [conversation/conversations/InjectMessage](./conversations/InjectMessage.java)
 - Capability
   - [conversation/capability/Capability](./capability/Capability.java)
