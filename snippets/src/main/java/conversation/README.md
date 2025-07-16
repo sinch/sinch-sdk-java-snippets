@@ -56,4 +56,10 @@ See main [README.md](../../../../../README.md) for how to execute snippets
     - [conversation/templates/v1/Update](./templates/v1/Update.java)
     - [conversation/templates/v1/Get](./templates/v1/Get.java)
     - [conversation/templates/v1/Delete](./templates/v1/Delete.java)
-
+  - V2
+    - [conversation/templates/v2/List](./templates/v2/List.java)
+    - [conversation/templates/v2/Create](./templates/v2/Create.java)
+    - [conversation/templates/v2/ListTranslations](./templates/v2/ListTranslations.java)    
+    - [conversation/templates/v2/Update](./templates/v2/Update.java)
+    - [conversation/templates/v2/Get](./templates/v2/Get.java)
+    - [conversation/templates/v2/Delete](./templates/v2/Delete.java)
