@@ -48,3 +48,12 @@ See main [README.md](../../../../../README.md) for how to execute snippets
   - [conversation/webhooks/Get](./webhooks/Get.java)
   - [conversation/webhooks/Update](./webhooks/Update.java)
   - [conversation/webhooks/Delete](./webhooks/Delete.java)
+
+- Templates
+  - V1
+    - [conversation/templates/v1/List](./templates/v1/List.java)
+    - [conversation/templates/v1/Create](./templates/v1/Create.java)
+    - [conversation/templates/v1/Update](./templates/v1/Update.java)
+    - [conversation/templates/v1/Get](./templates/v1/Get.java)
+    - [conversation/templates/v1/Delete](./templates/v1/Delete.java)
+
