@@ -41,7 +41,7 @@ public class UpdateVersion {
     LOGGER.info(String.format("Update template's version '%s'", mailgunTemplateVersionName));
 
     UpdateVersionRequest request =
-        UpdateVersionRequest.builder().setComment("a comment value modifed from snippet").build();
+        UpdateVersionRequest.builder().setComment("a comment value modified from snippet").build();
 
     templatesService.updateVersion(
         mailgunDomain, mailgunTemplateName, mailgunTemplateVersionName, request);

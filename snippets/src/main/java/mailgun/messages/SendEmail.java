@@ -56,7 +56,7 @@ public class SendEmail {
         .setFrom(from)
         .setTo(Arrays.asList(recipient))
         .setText("\uD83D\uDCE7 Text sent from Sinch SDK Java snippet")
-        .setHtml("&#128231; HTML sent from <bold>Sinch SDK Java</bold> snippet")
+        .setHtml("&#128231; HTML sent from <b>Sinch SDK Java</b> snippet")
         .setSubject("\uD83D\uDCE7 Hello from Sinch SDK Java snippet")
         .build();
   }

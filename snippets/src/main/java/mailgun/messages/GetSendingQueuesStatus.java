@@ -36,7 +36,7 @@ public class GetSendingQueuesStatus {
 
     EmailsService emailsService = client.mailgun().v1().emails();
 
-    LOGGER.info(String.format("Get queue status for domain '%s", mailgunDomain));
+    LOGGER.info(String.format("Get queue status for domain '%s'", mailgunDomain));
 
     SendingQueuesStatusResponse response = emailsService.getSendingQueuesStatus(mailgunDomain);
 

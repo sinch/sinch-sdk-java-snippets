@@ -1,7 +1,7 @@
 # Mailgun snippets
 Sinch Java SDK Code Snippets Repository for Mailgun APIs
 
-See main [README.md](../../../../../README.md) for how to execute snippets
+See the main [README.md](../../../../../README.md) for how to execute snippets
 
 - Messages
   - [mailgun/messages/SendEmail](./messages/SendEmail.java)

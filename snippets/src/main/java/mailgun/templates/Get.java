@@ -41,6 +41,6 @@ public class Get {
 
     Template value = templatesService.get(mailgunDomain, mailgunTemplateName);
 
-    LOGGER.info("Response:" + value);
+    LOGGER.info("Response: " + value);
   }
 }

@@ -40,7 +40,7 @@ public class Update {
     LOGGER.info(String.format("Update template '%s'", mailgunTemplateName));
 
     UpdateTemplateRequest request =
-        UpdateTemplateRequest.builder().setDescription("new description value").build();
+        UpdateTemplateRequest.builder().setDescription("New description value").build();
 
     templatesService.update(mailgunDomain, mailgunTemplateName, request);
 

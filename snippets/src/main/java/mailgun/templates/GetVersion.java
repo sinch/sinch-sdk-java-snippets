@@ -43,6 +43,6 @@ public class GetVersion {
     VersionDetails value =
         templatesService.getVersion(mailgunDomain, mailgunTemplateName, mailgunTemplateVersionName);
 
-    LOGGER.info("Response:" + value);
+    LOGGER.info("Response: " + value);
   }
 }
