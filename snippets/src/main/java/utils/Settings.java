@@ -55,6 +55,14 @@ public class Settings {
     return get("SINCH_APPLICATION_API_SECRET");
   }
 
+  public static Optional<String> getMailgunApiKey() {
+    return get("SINCH_MAILGUN_SERVICE_API_KEY");
+  }
+
+  public static Optional<String> getMailgunRegion() {
+    return get("SINCH_MAILGUN_REGION");
+  }
+
   public static Optional<String> getPhoneNumber() {
     return get("SINCH_PHONE_NUMBER");
   }
