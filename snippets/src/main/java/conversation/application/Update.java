@@ -41,7 +41,7 @@ public class Update {
 
     AppService appService = client.conversation().v1().app();
 
-    LOGGER.info(String.format("Update application with ID'%s'", conversationApplicationId));
+    LOGGER.info(String.format("Update application with ID '%s'", conversationApplicationId));
 
     AppUpdateRequest parameters =
         AppUpdateRequest.builder().setDisplayName("Updated from Java SDK snippet").build();

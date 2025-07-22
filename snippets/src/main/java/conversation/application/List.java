@@ -28,7 +28,8 @@ public class List {
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
     String servicePlanId = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
-    String smsApiToken = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
+
+    String smsApiToken = "MY_SMS_API_TOEKN";
 
     Configuration configuration =
         Configuration.builder()
