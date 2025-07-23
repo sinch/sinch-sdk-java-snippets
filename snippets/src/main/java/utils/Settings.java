@@ -63,6 +63,10 @@ public class Settings {
     return get("SINCH_MAILGUN_REGION");
   }
 
+  public static Optional<String> getConversationRegion() {
+    return get("SINCH_CONVERSATION_REGION");
+  }
+
   public static Optional<String> getPhoneNumber() {
     return get("SINCH_PHONE_NUMBER");
   }
