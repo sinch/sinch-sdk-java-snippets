@@ -31,8 +31,12 @@ public class Capability {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationApplicationId = "AN_APPLICATION_ID";
-    String smsRecipientPhoneNumber = "AN_SMS_RECIPIENT_PHONE_NUMBER";
+    // The ID of the Conversation App where the recipient channel is configured
+    String conversationApplicationId = "CONVERSATION_APP_ID";
+    // The channel to look up the capabilities for
+    ConversationChannel recipientChannel = ConversationChannel.SMS;
+    // The phone number of the recipient to look up the capabilities for
+    String recipientPhoneNumber = "RECIPIENT_PHONE_NUMBER";
 
     Configuration configuration =
         Configuration.builder()
@@ -49,8 +53,8 @@ public class Capability {
     Recipient channelRecipients =
         ChannelRecipientIdentities.of(
             ChannelRecipientIdentity.builder()
-                .setChannel(ConversationChannel.SMS)
-                .setIdentity(smsRecipientPhoneNumber)
+                .setChannel(recipientChannel)
+                .setIdentity(recipientPhoneNumber)
                 .build());
 
     QueryCapabilityRequest request =
@@ -60,7 +64,7 @@ public class Capability {
             .build();
 
     LOGGER.info(
-        String.format("Trigger capability lookup for phone number '%s'", smsRecipientPhoneNumber));
+        String.format("Trigger capability lookup for phone number '%s'", recipientPhoneNumber));
 
     QueryCapabilityResponse response = capabilityService.lookup(request);
 

@@ -27,7 +27,8 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String messageId = "A_CONVERSATION_MESSAGE_ID";
+    // The ID of the message to update
+    String messageId = "MESSAGE_ID";
 
     Configuration configuration =
         Configuration.builder()

@@ -27,8 +27,13 @@ public class GetChannelProfile {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationApplicationId = "AN_APPLICATION_ID";
-    String conversationContactId = "A_CONTACT_ID";
+    // The ID of the Conversation application the contact belongs to
+    String conversationApplicationId = "APPLICATION_ID";
+    // The ID of the contact to retrieve the channel profile for
+    String conversationContactId = "CONTACT_ID";
+    // The channel associated with the contact
+    GetChannelProfileConversationChannel conversationChannel =
+        GetChannelProfileConversationChannel.MESSENGER;
 
     Configuration configuration =
         Configuration.builder()
@@ -45,7 +50,7 @@ public class GetChannelProfile {
     ContactGetChannelProfileByContactIdRequest parametersByContactId =
         ContactGetChannelProfileByContactIdRequest.builder()
             .setAppId(conversationApplicationId)
-            .setChannel(GetChannelProfileConversationChannel.MESSENGER)
+            .setChannel(conversationChannel)
             .setContactId(conversationContactId)
             .build();
 

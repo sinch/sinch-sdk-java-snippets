@@ -27,10 +27,6 @@ public class List {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String servicePlanId = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
-
-    String smsApiToken = "MY_SMS_API_TOEKN";
-
     Configuration configuration =
         Configuration.builder()
             .setProjectId(projectId)

@@ -32,8 +32,9 @@ public class Create {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String smsServicePlanId = Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
-    String smsApiToken = ("AN_SMS_API_TOKEN");
+    // The service plan ID and API token for the SMS channel
+    String smsServicePlanId = Settings.getServicePlanId().orElse("SMS_SERVICE_PLAN_ID");
+    String smsApiToken = ("SMS_API_TOKEN");
 
     Configuration configuration =
         Configuration.builder()

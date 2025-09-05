@@ -32,9 +32,14 @@ public class InjectMessage {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationId = "A_CONVERSATION_ID";
-    String conversationContactId = "A_CONTACT_ID";
-    String smsRecipientPhoneNumber = "AN_SMS_RECIPIENT_PHONE_NUMBER";
+    // The ID of the conversation to inject the message into
+    String conversationId = "CONVERSATION_ID";
+    // The ID of the contact to inject the message into
+    String conversationContactId = "CONTACT_ID";
+    // The channel to use for the recipient
+    ConversationChannel recipientChannel = ConversationChannel.SMS;
+    // The phone number of the recipient in E.164 format
+    String recipientPhoneNumber = "RECIPIENT_PHONE_NUMBER";
 
     Configuration configuration =
         Configuration.builder()
@@ -59,8 +64,8 @@ public class InjectMessage {
             .setBody(appMessage)
             .setChannelIdentity(
                 ChannelIdentity.builder()
-                    .setChannel(ConversationChannel.SMS)
-                    .setIdentity(smsRecipientPhoneNumber)
+                    .setChannel(recipientChannel)
+                    .setIdentity(recipientPhoneNumber)
                     .build())
             .setDirection(ConversationDirection.TO_CONTACT)
             .setAcceptTime(Instant.now())

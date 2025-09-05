@@ -42,12 +42,13 @@ public class Create {
     TemplatesServiceV2 templatesServiceV2 = client.conversation().templates().v2();
     TemplateV2 request =
         TemplateV2.builder()
-            .setDefaultTranslation("fr-FR")
+            .setDefaultTranslation("en-US")
             .setTranslations(
                 Collections.singletonList(
                     TemplateTranslation.builder()
-                        .setLanguageCode("fr-FR")
-                        .setMessage(TextMessage.builder().setText("my text from template").build())
+                        .setLanguageCode("en-US")
+                        .setMessage(
+                            TextMessage.builder().setText("my text from V2 template").build())
                         .build()))
             .build();
 

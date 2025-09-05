@@ -27,8 +27,10 @@ public class Create {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationApplicationId = "AN_APPLICATION_ID";
-    String conversationContactId = "A_CONTACT_ID";
+    // The ID of the application to create the conversation in
+    String conversationApplicationId = "APPLICATION_ID";
+    // The ID of the contact to create the conversation with
+    String conversationContactId = "CONTACT_ID";
 
     Configuration configuration =
         Configuration.builder()

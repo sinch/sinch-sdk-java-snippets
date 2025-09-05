@@ -29,7 +29,8 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationTemplateId = "A_TEMPLATE_ID";
+    // The ID of the template to update
+    String conversationTemplateId = "TEMPLATE_ID";
 
     Configuration configuration =
         Configuration.builder()
@@ -54,7 +55,9 @@ public class Update {
                         .setVersion("1")
                         .setLanguageCode("en-US")
                         .setMessage(
-                            TextMessage.builder().setText("my updated text from template").build())
+                            TextMessage.builder()
+                                .setText("my updated text from V2 template")
+                                .build())
                         .build()))
             .build();
 

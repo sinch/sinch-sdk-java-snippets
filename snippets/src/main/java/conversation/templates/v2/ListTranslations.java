@@ -27,7 +27,8 @@ public class ListTranslations {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationTemplateId = "A_TEMPLATE_ID";
+    // The ID of the template to retrieve translations for
+    String conversationTemplateId = "TEMPLATE_ID";
 
     Configuration configuration =
         Configuration.builder()
