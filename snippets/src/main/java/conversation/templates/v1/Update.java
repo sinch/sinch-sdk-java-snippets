@@ -52,8 +52,7 @@ public class Update {
                     TemplateTranslation.builder()
                         .setLanguageCode("en-US")
                         .setContent(
-                            "{ \"text_message\": { \"text\" : \"text updated from V1 from"
-                                + " template\"}}")
+                            "{ \"text_message\": { \"text\" : \"text updated from V1 template\"}}")
                         .build()))
             .build();
 
