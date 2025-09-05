@@ -28,7 +28,8 @@ public class Create {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationApplicationId = "AN_APPLICATION_ID";
+    // The ID of the conversation application to create the webhook for
+    String conversationApplicationId = "APPLICATION_ID";
 
     Configuration configuration =
         Configuration.builder()

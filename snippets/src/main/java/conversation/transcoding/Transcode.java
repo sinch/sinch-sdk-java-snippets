@@ -32,7 +32,10 @@ public class Transcode {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationApplicationId = "AN_APPLICATION_ID";
+    // ID of the Conversation application to use for transcoding
+    String conversationApplicationId = "APPLICATION_ID";
+    //
+    ConversationChannel conversationChannel = ConversationChannel.WHATSAPP;
 
     Configuration configuration =
         Configuration.builder()
@@ -63,7 +66,7 @@ public class Transcode {
         TranscodeMessageRequest.builder()
             .setAppId(conversationApplicationId)
             .setAppMessage(appMessage)
-            .setChannels(Arrays.asList(ConversationChannel.WHATSAPP))
+            .setChannels(Arrays.asList(conversationChannel))
             .build();
 
     LOGGER.info("Transcode message request: " + request);

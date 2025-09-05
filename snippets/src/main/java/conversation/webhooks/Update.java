@@ -29,8 +29,8 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationApplicationId = "AN_APPLICATION_ID";
-    String conversationWebhookId = "A_WEBHOOK_ID";
+    // The ID of the conversation webhook to update
+    String conversationWebhookId = "WEBHOOK_ID";
 
     Configuration configuration =
         Configuration.builder()
@@ -46,7 +46,6 @@ public class Update {
 
     Webhook webhookRequest =
         Webhook.builder()
-            .setAppId(conversationApplicationId)
             .setTarget("https://foo.com")
             .setTriggers(Arrays.asList(WebhookTrigger.CAPABILITY, WebhookTrigger.CHANNEL_EVENT))
             .setTargetType(WebhookTargetType.HTTP)

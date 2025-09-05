@@ -26,8 +26,10 @@ public class Merge {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String sourceContactId = "A_SOURCE_CONTACT_ID";
-    String destinationContactId = "A_MERGE_CONTACT_ID";
+    //  The ID of the contact to merge from (the source contact)
+    String sourceContactId = "SOURCE_CONTACT_ID";
+    // The ID of the contact to merge into (the destination contact)
+    String destinationContactId = "DESTINATION_CONTACT_ID";
 
     Configuration configuration =
         Configuration.builder()
@@ -42,8 +44,9 @@ public class Merge {
     ContactService contactService = client.conversation().v1().contact();
 
     LOGGER.info(
-        "Merge contact with ID '%s' onto contact with ID '%s'"
-            .formatted(sourceContactId, destinationContactId));
+        String.format(
+            "Merge contact with ID '%s' onto contact with ID '%s'",
+            sourceContactId, destinationContactId));
 
     Contact result = contactService.mergeContact(destinationContactId, sourceContactId);
 

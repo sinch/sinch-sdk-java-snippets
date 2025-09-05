@@ -42,9 +42,13 @@ public class Create {
 
     TemplateV1 request =
         TemplateV1.builder()
-            .setDefaultTranslation("fr-FR")
+            .setDefaultTranslation("en-US")
             .setTranslations(
-                Arrays.asList(TemplateTranslation.builder().setLanguageCode("fr-FR").build()))
+                Arrays.asList(
+                    TemplateTranslation.builder()
+                        .setLanguageCode("en-US")
+                        .setContent("my text from template")
+                        .build()))
             .build();
 
     LOGGER.info("Create template");

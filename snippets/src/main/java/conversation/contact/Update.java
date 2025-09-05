@@ -26,7 +26,8 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationContactId = "A_CONTACT_ID";
+    // The ID of the contact to update
+    String conversationContactId = "CONTACT_ID";
 
     Configuration configuration =
         Configuration.builder()

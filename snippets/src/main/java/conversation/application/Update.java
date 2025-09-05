@@ -27,7 +27,10 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationApplicationId = "AN_APPLICATION_ID";
+    // The ID of the Conversation App to update
+    String conversationApplicationId = "CONVERSATION_APP_ID";
+    // New name for the Conversation App
+    String updatedAppName = "Updated from Java SDK snippet";
 
     Configuration configuration =
         Configuration.builder()
@@ -43,8 +46,7 @@ public class Update {
 
     LOGGER.info(String.format("Update application with ID '%s'", conversationApplicationId));
 
-    AppUpdateRequest parameters =
-        AppUpdateRequest.builder().setDisplayName("Updated from Java SDK snippet").build();
+    AppUpdateRequest parameters = AppUpdateRequest.builder().setDisplayName(updatedAppName).build();
 
     AppResponse result = appService.update(conversationApplicationId, parameters);
 

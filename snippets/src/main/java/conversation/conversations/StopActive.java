@@ -25,7 +25,8 @@ public class StopActive {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationId = "A_CONVERSATION_ID";
+    // The ID of the conversation to stop
+    String conversationId = "CONVERSATION_ID";
 
     Configuration configuration =
         Configuration.builder()

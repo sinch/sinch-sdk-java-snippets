@@ -31,7 +31,14 @@ public class Create {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String smsRecipientPhoneNumber = "AN_SMS_RECIPIENT_PHONE_NUMBER";
+    // The channel to use for the contact
+    ConversationChannel recipientChannel = ConversationChannel.SMS;
+    // The phone number of the contact to create
+    String recipientPhoneNumber = "RECIPIENT_PHONE_NUMBER";
+    // The display name of the contact to create
+    String contactDisplayName = "Created from Java SDK snippet";
+    // The language of the contact to create
+    ContactLanguage contactLanguage = ContactLanguage.FR;
 
     Configuration configuration =
         Configuration.builder()
@@ -52,11 +59,11 @@ public class Create {
             .setChannelIdentities(
                 Arrays.asList(
                     ChannelIdentity.builder()
-                        .setChannel(ConversationChannel.SMS)
-                        .setIdentity(smsRecipientPhoneNumber)
+                        .setChannel(recipientChannel)
+                        .setIdentity(recipientPhoneNumber)
                         .build()))
-            .setDisplayName("created from Java SDK snippet")
-            .setLanguage(ContactLanguage.FR)
+            .setDisplayName(contactDisplayName)
+            .setLanguage(contactLanguage)
             .build();
 
     Contact result = contactService.create(contact);

@@ -26,7 +26,8 @@ public class Get {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String messageId = "A_CONVERSATION_MESSAGE_ID";
+    // ID of the message to retrieve
+    String messageId = "MESSAGE_ID";
 
     Configuration configuration =
         Configuration.builder()

@@ -35,8 +35,12 @@ public class InjectEvent {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationId = "A_CONVERSATION_ID";
-    String smsRecipientPhoneNumber = "AN_SMS_RECIPIENT_PHONE_NUMBER";
+    // The ID of the conversation to inject the event into
+    String conversationId = "CONVERSATION_ID";
+    // The channel to use for the recipient
+    ConversationChannel recipientChannel = ConversationChannel.SMS;
+    // The identity of the recipient (e.g. phone number for SMS)
+    String recipientPhoneNumber = "RECIPIENT_PHONE_NUMBER";
 
     Configuration configuration =
         Configuration.builder()
@@ -61,8 +65,8 @@ public class InjectEvent {
             .setAppEvent(event)
             .setChannelIdentity(
                 ChannelIdentity.builder()
-                    .setChannel(ConversationChannel.SMS)
-                    .setIdentity(smsRecipientPhoneNumber)
+                    .setChannel(recipientChannel)
+                    .setIdentity(recipientPhoneNumber)
                     .build())
             .setConversationId(conversationId)
             .setProcessingMode(ProcessingMode.CONVERSATION)

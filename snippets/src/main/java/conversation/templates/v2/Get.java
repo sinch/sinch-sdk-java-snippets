@@ -26,7 +26,8 @@ public class Get {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    String conversationTemplateId = "A_TEMPLATE_ID";
+    // ID of the template to retrieve
+    String conversationTemplateId = "TEMPLATE_ID";
 
     Configuration configuration =
         Configuration.builder()
