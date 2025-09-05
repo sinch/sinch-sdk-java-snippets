@@ -26,8 +26,7 @@ public class Get {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    //
-
+    // The ID of the event to retrieve
     String eventId = "EVENT_ID";
 
     Configuration configuration =

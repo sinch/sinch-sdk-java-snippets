@@ -47,7 +47,9 @@ public class Create {
                 Arrays.asList(
                     TemplateTranslation.builder()
                         .setLanguageCode("en-US")
-                        .setContent("my text from template")
+                        .setVersion("1234")
+                        .setContent(
+                            "{ \"text_message\": { \"text\" : \"my text from V1 template\"}}")
                         .build()))
             .build();
 

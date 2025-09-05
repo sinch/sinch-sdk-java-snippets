@@ -25,7 +25,7 @@ public class Delete {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    // ID of the message to delete
+    // The ID of the event to delete
     String messageId = "MESSAGE_ID";
 
     Configuration configuration =

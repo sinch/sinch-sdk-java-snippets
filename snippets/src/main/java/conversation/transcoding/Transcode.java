@@ -34,7 +34,7 @@ public class Transcode {
 
     // ID of the Conversation application to use for transcoding
     String conversationApplicationId = "APPLICATION_ID";
-    //
+    // The channel to transcode the message for
     ConversationChannel conversationChannel = ConversationChannel.WHATSAPP;
 
     Configuration configuration =

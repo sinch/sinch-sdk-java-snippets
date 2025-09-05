@@ -28,7 +28,7 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    // ID of the template to update
+    // The ID of the template to update
     String conversationTemplateId = "TEMPLATE_ID";
 
     Configuration configuration =
@@ -48,7 +48,13 @@ public class Update {
             .setDescription("Updated description from V1 API")
             .setDefaultTranslation("en-US")
             .setTranslations(
-                Arrays.asList(TemplateTranslation.builder().setLanguageCode("en-US").build()))
+                Arrays.asList(
+                    TemplateTranslation.builder()
+                        .setLanguageCode("en-US")
+                        .setContent(
+                            "{ \"text_message\": { \"text\" : \"text updated from V1 from"
+                                + " template\"}}")
+                        .build()))
             .build();
 
     LOGGER.info(String.format("Update template with ID '%s'", conversationTemplateId));

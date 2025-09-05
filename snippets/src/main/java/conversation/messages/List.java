@@ -27,7 +27,7 @@ public class List {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    // ID of the Conversation Application to list messages for
+    // The ID of the Conversation Application to list messages for
     String conversationApplicationId = "APPLICATION_ID";
 
     Configuration configuration =

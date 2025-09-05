@@ -32,7 +32,7 @@ public class Send {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String conversationRegion = Settings.getConversationRegion().orElse("MY_CONVERSATION_REGION");
 
-    // ID of the Conversation Application to send the message from
+    // The ID of the Conversation Application to send the message from
     String conversationApplicationId = "CONVERSATION_APPLICATION_ID";
     // Phone number to send the SMS message to (in E.164 format, e.g. +46701234567)
     String smsRecipientPhoneNumber = "RECIPIENT_PHONE_NUMBER";

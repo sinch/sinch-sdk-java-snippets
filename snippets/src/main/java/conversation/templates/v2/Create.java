@@ -47,7 +47,8 @@ public class Create {
                 Collections.singletonList(
                     TemplateTranslation.builder()
                         .setLanguageCode("en-US")
-                        .setMessage(TextMessage.builder().setText("my text from template").build())
+                        .setMessage(
+                            TextMessage.builder().setText("my text from V2 template").build())
                         .build()))
             .build();
 
