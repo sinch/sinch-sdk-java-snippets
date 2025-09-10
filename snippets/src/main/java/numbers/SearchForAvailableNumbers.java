@@ -26,7 +26,8 @@ public class SearchForAvailableNumbers {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
-    // ISO 3166-1 alpha-2 country code of the phone number
+    // ISO 3166-1 alpha-2 country code of the phone number. e.g. "US", "GB", "SE"...
+    // See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for details
     String regionCode = "MY_REGION_CODE";
     NumberType type = NumberType.LOCAL;
 

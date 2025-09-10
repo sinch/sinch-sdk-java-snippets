@@ -30,7 +30,8 @@ public class RentAny {
     String servicePlanIdToAssociateWithTheNumber =
         Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
 
-    // ISO 3166-1 alpha-2 country code of the phone number
+    // ISO 3166-1 alpha-2 country code of the phone number. e.g. "US", "GB", "SE"...
+    // See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for details
     String regionCode = "MY_REGION_CODE";
 
     NumberType numberType = NumberType.LOCAL;
