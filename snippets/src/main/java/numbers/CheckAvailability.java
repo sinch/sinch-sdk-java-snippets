@@ -24,7 +24,7 @@ public class CheckAvailability {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
-    String phoneNumber = "A_PHONE_NUMBER_TO_RENT";
+    String phoneNumber = "A_PHONE_NUMBER_TO_CHECK";
 
     Configuration configuration =
         Configuration.builder()
