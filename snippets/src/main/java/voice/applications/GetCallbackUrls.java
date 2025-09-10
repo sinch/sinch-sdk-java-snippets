@@ -33,7 +33,7 @@ public class GetCallbackUrls {
 
     ApplicationsService applicationsService = client.voice().v1().applications();
 
-    LOGGER.info("Get callback URLs for application key '%s'".formatted(applicationKey));
+    LOGGER.info(String.format("Get callback URLs for application key '%s'", applicationKey));
 
     Callbacks response = applicationsService.getCallbackUrls(applicationKey);
 

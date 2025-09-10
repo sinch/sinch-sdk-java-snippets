@@ -25,7 +25,7 @@ public class Update {
     String keyId = Settings.getKeyId().orElse("MY_KEY_ID");
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
 
-    String hmac = "HMAC value";
+    String hmac = "NEW_HMAC_SECRET";
 
     Configuration configuration =
         Configuration.builder()
@@ -38,7 +38,7 @@ public class Update {
 
     CallbackConfigurationService callbackConfigurationService = client.numbers().v1().callback();
 
-    LOGGER.info("Update callback HMAC value");
+    LOGGER.info("Update callback HMAC secret");
 
     CallbackConfigurationUpdateRequest parameters =
         CallbackConfigurationUpdateRequest.builder().setHmacSecret(hmac).build();
