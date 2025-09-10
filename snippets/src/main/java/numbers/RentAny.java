@@ -30,8 +30,9 @@ public class RentAny {
     String servicePlanIdToAssociateWithTheNumber =
         Settings.getServicePlanId().orElse("MY_SERVICE_PLAN_ID");
 
-    // ISO 3166-1 alpha-2 country code of the phone number. e.g. "US", "GB", "SE"...
-    // See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for details
+    // Available regions can be retrieved by using list() function from regions service, see
+    // the numbers/regions/List snippet or
+    // https://developers.sinch.com/docs/numbers/api-reference/numbers/tag/Available-Regions/
     String regionCode = "MY_REGION_CODE";
 
     NumberType numberType = NumberType.LOCAL;
