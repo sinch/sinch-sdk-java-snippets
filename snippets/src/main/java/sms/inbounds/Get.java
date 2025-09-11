@@ -26,7 +26,8 @@ public class Get {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String inboundId = "AN_INBOUND_ID";
+    // The ID of the inbound message to retrieve
+    String inboundId = "INBOUND_ID";
 
     Configuration configuration =
         Configuration.builder()

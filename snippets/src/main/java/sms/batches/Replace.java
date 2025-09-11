@@ -29,8 +29,11 @@ public class Replace {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String batchId = "A_BATCH_ID";
-    List<String> recipients = Arrays.asList("A_NEW_RECIPIENT_PHONE_NUMBER");
+    // ID of the SMS batch to replace
+    String batchId = "BATCH_ID";
+    // New values to replace in the batch (phone number, in E.164 format (e.g., +46701234567)
+    List<String> recipients = Arrays.asList("NEW_RECIPIENT_PHONE_NUMBER");
+    // New body of the SMS message
     String body = "A message body updated";
 
     Configuration configuration =

@@ -26,8 +26,10 @@ public class GetForNumber {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String batchId = "A_BATCH_ID";
-    String phoneNumber = "A_RECIPIENT_PHONE_NUMBER";
+    // The ID of the SMS batch to retrieve the delivery report for
+    String batchId = "BATCH_ID";
+    // The phone number to retrieve the delivery report for
+    String phoneNumber = "RECIPIENT_PHONE_NUMBER";
 
     Configuration configuration =
         Configuration.builder()

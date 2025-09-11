@@ -29,9 +29,13 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String groupId = "A_GROUP_ID";
-    String groupName = "New name updated";
+    // The ID of the group to update
+    String groupId = "GROUP_ID";
+    // New name for the group
+    String groupName = "Updated Group Name from Java SDK";
+    // Members to remove from the group
     List<String> toRemove = Arrays.asList("+11111111111", "+29999999999");
+    // Members to add to the group
     List<String> toAdd = Arrays.asList("+123456789", "+987654321");
 
     Configuration configuration =

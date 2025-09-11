@@ -28,8 +28,10 @@ public class SendDeliveryFeedback {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String batchId = "A_BATCH_ID";
-    List<String> recipients = Arrays.asList("A_RECIPIENT_PHONE_NUMBER");
+    // The batch ID from which the message was sent
+    String batchId = "BATCH_ID";
+    // The recipient phone number, in E.164 format (e.g., +46701234567)
+    List<String> recipients = Arrays.asList("RECIPIENT_PHONE_NUMBER");
 
     Configuration configuration =
         Configuration.builder()

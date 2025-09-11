@@ -29,9 +29,11 @@ public class DryRun {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String phoneNumber = Settings.getPhoneNumber().orElse("MY_SINCH_PHONE_NUMBER");
-
-    List<String> recipients = Arrays.asList("A_RECIPIENT_PHONE_NUMBER");
+    // The sender phone number (Sinch virtual number, alphanumeric sender ID, or short code)
+    String senderNumber = Settings.getPhoneNumber().orElse("SENDER_NUMBER");
+    // The recipient phone number, in E.164 format (e.g., +46701234567)
+    List<String> recipients = Arrays.asList("RECIPIENT_PHONE_NUMBER");
+    // The body of the SMS message
     String body = "A body text here";
 
     Configuration configuration =
@@ -49,7 +51,7 @@ public class DryRun {
     LOGGER.info("DryRun Request");
 
     TextRequest request =
-        TextRequest.builder().setFrom(phoneNumber).setTo(recipients).setBody(body).build();
+        TextRequest.builder().setFrom(senderNumber).setTo(recipients).setBody(body).build();
 
     DryRunResponse response = batchesService.dryRun(request);
 

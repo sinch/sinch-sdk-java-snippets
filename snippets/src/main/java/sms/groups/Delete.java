@@ -25,7 +25,8 @@ public class Delete {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String groupId = "A_GROUP_ID";
+    // The ID of the group to delete
+    String groupId = "GROUP_ID";
 
     Configuration configuration =
         Configuration.builder()

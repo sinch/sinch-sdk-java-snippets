@@ -29,9 +29,11 @@ public class Send {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String phoneNumber = Settings.getPhoneNumber().orElse("MY_SINCH_PHONE_NUMBER");
-
-    List<String> recipients = Arrays.asList("A_RECIPIENT_PHONE_NUMBER");
+    // The sender phone number (Sinch virtual number, alphanumeric sender ID, or short code)
+    String senderNumber = Settings.getPhoneNumber().orElse("SENDER_NUMBER");
+    // The recipient phone number, in E.164 format (e.g., +46701234567)
+    List<String> recipients = Arrays.asList("RECIPIENT_PHONE_NUMBER");
+    // The body of the SMS message
     String body = "This is a test SMS message using the Sinch Java SDK.";
 
     Configuration configuration =
@@ -49,7 +51,7 @@ public class Send {
     LOGGER.info(String.format("Sending SMS Text to recipients '%s'", recipients));
 
     TextRequest request =
-        TextRequest.builder().setTo(recipients).setBody(body).setFrom(phoneNumber).build();
+        TextRequest.builder().setTo(recipients).setBody(body).setFrom(senderNumber).build();
 
     BatchResponse response = batchesService.send(request);
 
