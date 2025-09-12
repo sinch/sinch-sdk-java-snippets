@@ -29,8 +29,11 @@ public class Update {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String batchId = "A_BATCH_ID";
+    // ID of the SMS batch to update
+    String batchId = "BATCH_ID";
+    // Phone numbers to remove from the batch (in E.164 format, e.g., +46701234567)
     List<String> toRemove = Arrays.asList("+11111111111", "+29999999999");
+    // Phone numbers to add to the batch (in E.164 format, e.g., +46701234567)
     List<String> toAdd = Arrays.asList("+123456789", "+987654321");
 
     Configuration configuration =

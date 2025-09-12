@@ -26,7 +26,8 @@ public class Get {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String batchId = "A_BATCH_ID";
+    // The ID of the SMS batch to retrieve the delivery report for
+    String batchId = "BATCH_ID";
 
     Configuration configuration =
         Configuration.builder()

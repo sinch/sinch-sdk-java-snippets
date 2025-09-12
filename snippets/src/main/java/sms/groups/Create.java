@@ -30,8 +30,10 @@ public class Create {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
+    // The name of the group to create
     String groupName = "Sinch Java SDK group";
-    Set<String> members = new HashSet<>(Arrays.asList("A_RECIPIENT_PHONE_NUMBER"));
+    // The members to include in the group (Phone numbers in E.164 format)
+    Set<String> members = new HashSet<>(Arrays.asList("PHONE_NUMBER"));
 
     Configuration configuration =
         Configuration.builder()

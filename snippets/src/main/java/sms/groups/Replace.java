@@ -30,8 +30,10 @@ public class Replace {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    String groupId = "A_GROUP_ID";
-    Set<String> members = new HashSet<>(Arrays.asList("A_RECIPIENT_PHONE_NUMBER"));
+    // The ID of the group to replace members for
+    String groupId = "GROUP_ID";
+    // The new members to set for the group (Phone numbers in E.164 format)
+    Set<String> members = new HashSet<>(Arrays.asList("RECIPIENT_PHONE_NUMBER"));
 
     Configuration configuration =
         Configuration.builder()
