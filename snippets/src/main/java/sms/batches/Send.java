@@ -29,8 +29,11 @@ public class Send {
     String keySecret = Settings.getKeySecret().orElse("MY_KEY_SECRET");
     String smsRegion = Settings.getSMSRegion().orElse("MY_SMS_REGION");
 
-    // The sender phone number (Sinch virtual number, alphanumeric sender ID, or short code)
-    String senderNumber = Settings.getPhoneNumber().orElse("SENDER_NUMBER");
+    // Sender could be a:
+    // - phone number:  e.g. Sinch virtual number in E164 format
+    // - alphanumeric sender ID: e.g. a brand name "BRAND"
+    // - US short code: e.g. "12345"
+    String sender = Settings.getPhoneNumber().orElse("SENDER_NUMBER");
     // The recipient phone number, in E.164 format (e.g., +46701234567)
     List<String> recipients = Arrays.asList("RECIPIENT_PHONE_NUMBER");
     // The body of the SMS message
@@ -51,7 +54,7 @@ public class Send {
     LOGGER.info(String.format("Sending SMS Text to recipients '%s'", recipients));
 
     TextRequest request =
-        TextRequest.builder().setTo(recipients).setBody(body).setFrom(senderNumber).build();
+        TextRequest.builder().setTo(recipients).setBody(body).setFrom(sender).build();
 
     BatchResponse response = batchesService.send(request);
 
