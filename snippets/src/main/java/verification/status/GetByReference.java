@@ -23,7 +23,8 @@ public class GetByReference {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String verificationReference = "A_VERIFICATION_REFERENCE_FROM_START";
+    // The reference you defined when starting the verification process.
+    String verificationReference = "VERIFICATION_REFERENCE";
 
     Configuration configuration =
         Configuration.builder()

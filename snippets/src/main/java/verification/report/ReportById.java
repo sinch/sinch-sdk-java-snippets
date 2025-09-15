@@ -24,8 +24,10 @@ public class ReportById {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String verificationId = "A_VERIFICATION_ID";
-    String receivedVerificationCode = "A_RECEIVED_VERIFICATION_CODE";
+    // The id you received back from the API call when starting verification by SMS
+    String verificationId = "VERIFICATION_ID";
+    // The OTP is the code the user received via SMS as part of the verification process.
+    String receivedVerificationCode = "OTP_CODE";
 
     Configuration configuration =
         Configuration.builder()
