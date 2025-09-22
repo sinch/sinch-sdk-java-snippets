@@ -25,7 +25,8 @@ public class Start {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String destinationPhoneNumber = "PHONE_NUMBER_TO_SEND_SMS_TO";
+    // The phone number you want to verify, in E.164 format (e.g. +46701234567).
+    String phoneNumber = "PHONE_NUMBER";
 
     Configuration configuration =
         Configuration.builder()
@@ -38,13 +39,11 @@ public class Start {
     VerificationStartService verificationStartService =
         client.verification().v1().verificationStart();
 
-    LOGGER.info(
-        String.format(
-            "Start a verification by SMS onto phone number '%s'", destinationPhoneNumber));
+    LOGGER.info(String.format("Start a verification by SMS onto phone number '%s'", phoneNumber));
 
     VerificationStartRequestSms request =
         VerificationStartRequestSms.builder()
-            .setIdentity(NumberIdentity.valueOf(destinationPhoneNumber))
+            .setIdentity(NumberIdentity.valueOf(phoneNumber))
             .build();
 
     VerificationStartResponse response = verificationStartService.startSms(request);

@@ -23,7 +23,8 @@ public class GetById {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String verificationId = "A_VERIFICATION_ID";
+    // The id you received back from the API call when starting verification
+    String verificationId = "VERIFICATION_ID";
 
     Configuration configuration =
         Configuration.builder()

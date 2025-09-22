@@ -25,7 +25,11 @@ public class GetByIdentity {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String destinationPhoneNumber = "PHONE_NUMBER_WHICH_RECEIVED_THE_VERIFICATION_CODE";
+    // The phone number you are verifying, in E.164 format (e.g. +46701234567).
+    // This should be the same number you used when starting the verification.
+    String phoneNumber = "PHONE_NUMBER";
+    // The verification method you used when starting the verification.
+    VerificationMethod verificationMethod = VerificationMethod.SMS;
 
     Configuration configuration =
         Configuration.builder()
@@ -38,12 +42,12 @@ public class GetByIdentity {
     VerificationStatusService verificationStatusService =
         client.verification().v1().verificationStatus();
 
-    LOGGER.info(String.format("Verification status for phone number '%s'", destinationPhoneNumber));
+    LOGGER.info(String.format("Verification status for phone number '%s'", phoneNumber));
 
-    NumberIdentity identity = NumberIdentity.valueOf(destinationPhoneNumber);
+    NumberIdentity identity = NumberIdentity.valueOf(phoneNumber);
 
     VerificationStatusResponse response =
-        verificationStatusService.getByIdentity(identity, VerificationMethod.SMS);
+        verificationStatusService.getByIdentity(identity, verificationMethod);
 
     LOGGER.info("Response: " + response);
   }

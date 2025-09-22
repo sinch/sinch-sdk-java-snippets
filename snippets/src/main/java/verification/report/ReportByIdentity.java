@@ -25,8 +25,10 @@ public class ReportByIdentity {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String destinationPhoneNumber = "PHONE_NUMBER_WHICH_RECEIVED_THE_VERIFICATION_CODE";
-    String receivedVerificationCode = "A_RECEIVED_VERIFICATION_CODE";
+    // The phone number being verified via SMS.
+    String phoneNumber = "PHONE_NUMBER";
+    // The OTP is the code the user received via SMS as part of the verification process.
+    String receivedVerificationCode = "OTP_CODE";
 
     Configuration configuration =
         Configuration.builder()
@@ -39,16 +41,13 @@ public class ReportByIdentity {
     VerificationReportService verificationReportService =
         client.verification().v1().verificationReport();
 
-    LOGGER.info(
-        String.format(
-            "Report SMS verification code for phone number '%s'", destinationPhoneNumber));
+    LOGGER.info(String.format("Report SMS verification code for phone number '%s'", phoneNumber));
 
     VerificationReportRequestSms request =
         VerificationReportRequestSms.builder().setCode(receivedVerificationCode).build();
 
     VerificationReportResponse response =
-        verificationReportService.reportSmsByIdentity(
-            NumberIdentity.valueOf(destinationPhoneNumber), request);
+        verificationReportService.reportSmsByIdentity(NumberIdentity.valueOf(phoneNumber), request);
 
     LOGGER.info("Response: " + response);
   }
