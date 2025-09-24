@@ -24,7 +24,8 @@ public class Call {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String recipientPhoneNumber = "PHONE_NUMBER_TO_BE_CALLED";
+    // The phone number you want to call, in E.164 format (e.g., +12025550123)
+    String recipientPhoneNumber = "RECIPIENT_PHONE_NUMBER";
     String textToSpeech = "Hello, this is a call initiated from Sinch Java SDK. Goodbye.";
 
     Configuration configuration =

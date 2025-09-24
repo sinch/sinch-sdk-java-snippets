@@ -24,8 +24,10 @@ public class ManageParticipant {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String conferenceId = "AN_EXISTING_CONFERENCE_ID";
-    String callId = "A_CALL_ID";
+    // The ID of the conference to manage a participant in
+    String conferenceId = "CONFERENCE_ID";
+    // The Call ID of the participant to manage in the conference
+    String callId = "CALL_ID";
 
     Configuration configuration =
         Configuration.builder()

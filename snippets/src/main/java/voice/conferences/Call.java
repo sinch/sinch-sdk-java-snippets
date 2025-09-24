@@ -25,8 +25,11 @@ public class Call {
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
     String phoneNumber = Settings.getPhoneNumber().orElse("MY_SINCH_PHONE_NUMBER");
 
-    String conferenceId = "AN_EXISTING_OR_TO_BE_CREATED_CONFERENCE_ID";
-    String phoneNumberToBeCalled = "PHONE_NUMBER_TO_BE_CALLED";
+    // An existing or to be created conference ID
+    String conferenceId = "CONFERENCE_ID";
+    // The phone number to be called and added to the conference, in E.164 format (e.g.,
+    // +12025550123)
+    String recipientPhoneNumber = "RECIPIENT_PHONE_NUMBER";
 
     Configuration configuration =
         Configuration.builder()
@@ -40,11 +43,11 @@ public class Call {
 
     LOGGER.info(
         String.format(
-            "Joining conference '%s' for phone number '%s'", conferenceId, phoneNumberToBeCalled));
+            "Joining conference '%s' for phone number '%s'", conferenceId, recipientPhoneNumber));
 
     CalloutRequestConference request =
         CalloutRequestConference.builder()
-            .setDestination(DestinationPstn.from(phoneNumberToBeCalled))
+            .setDestination(DestinationPstn.from(recipientPhoneNumber))
             .setCli(phoneNumber)
             .setConferenceId(conferenceId)
             .build();

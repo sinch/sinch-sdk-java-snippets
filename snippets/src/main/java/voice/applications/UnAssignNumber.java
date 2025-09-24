@@ -23,6 +23,7 @@ public class UnAssignNumber {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
+    // The phone number to unassign from the application, in E.164 format (e.g., +12025550123)
     String phoneNumber = Settings.getPhoneNumber().orElse("MY_SINCH_PHONE_NUMBER");
 
     Configuration configuration =

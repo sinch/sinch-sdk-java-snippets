@@ -23,7 +23,8 @@ public class Get {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String callId = "A_CALL_ID";
+    // The ID of the call to retrieve
+    String callId = "CALL_ID";
 
     Configuration configuration =
         Configuration.builder()

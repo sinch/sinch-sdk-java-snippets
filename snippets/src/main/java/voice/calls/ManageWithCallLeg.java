@@ -30,7 +30,10 @@ public class ManageWithCallLeg {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String callId = "A_CALL_ID";
+    // The ID of the call to manage
+    String callId = "CALL_ID";
+    // The call leg to manage
+    CallLeg callLeg = CallLeg.CALLEE;
 
     Configuration configuration =
         Configuration.builder()
@@ -55,7 +58,7 @@ public class ManageWithCallLeg {
     SvamlControl request =
         SvamlControl.builder().setInstructions(instructions).setAction(action).build();
 
-    callsService.manageWithCallLeg(callId, CallLeg.CALLEE, request);
+    callsService.manageWithCallLeg(callId, callLeg, request);
 
     LOGGER.info("Done");
   }

@@ -22,8 +22,10 @@ public class KickParticipant {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String conferenceId = "AN_EXISTING_CONFERENCE_ID";
-    String callId = "A_CALL_ID";
+    // The ID of the conference to remove a participant from
+    String conferenceId = "CONFERENCE_ID";
+    // The Call ID of the participant to remove from the conference
+    String callId = "CALL_ID";
 
     Configuration configuration =
         Configuration.builder()
