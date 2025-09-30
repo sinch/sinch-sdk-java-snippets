@@ -23,7 +23,8 @@ public class Get {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String conferenceId = "AN_EXISTING_CONFERENCE_ID";
+    // The ID of the conference to retrieve
+    String conferenceId = "CONFERENCE_ID";
 
     Configuration configuration =
         Configuration.builder()

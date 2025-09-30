@@ -24,7 +24,8 @@ public class UpdateCallbackUrls {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String callbackURL = "A_WEBHOOK_URL";
+    // The new callback URL to set for the application
+    String callbackURL = "https://my.callback.url/voice";
 
     Configuration configuration =
         Configuration.builder()

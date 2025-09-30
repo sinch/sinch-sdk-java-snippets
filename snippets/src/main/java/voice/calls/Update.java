@@ -29,7 +29,12 @@ public class Update {
     String applicationKey = Settings.getApplicationKey().orElse("MY_APPLICATION_KEY");
     String applicationSecret = Settings.getApplicationSecret().orElse("MY_APPLICATION_SECRET");
 
-    String callId = "A_CALL_ID";
+    // The ID of the call to update
+    String callId = "CALL_ID";
+    // The instruction to be performed
+    SvamlInstruction instruction = SvamlInstructionSay.builder().setText("Goodbye").build();
+    // The instruction to add to the call
+    SvamlAction action = SvamlActionHangup.DEFAULT;
 
     Configuration configuration =
         Configuration.builder()
@@ -42,10 +47,6 @@ public class Update {
     CallsService callsService = client.voice().v1().calls();
 
     LOGGER.info(String.format("Updating call with ID '%s'", callId));
-
-    SvamlAction action = SvamlActionHangup.DEFAULT;
-
-    SvamlInstruction instruction = SvamlInstructionSay.builder().setText("Goodbye").build();
 
     Collection<SvamlInstruction> instructions = Collections.singletonList(instruction);
 
